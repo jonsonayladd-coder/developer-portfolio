@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Daintree Thai Boxing — Portfolio Showcase | Marc Dinnerville</title>
+  <meta name="description" content="A complete web platform for a personal Muay Thai coaching business in the Daintree Rainforest. 10 AI tools, $0/month, built in under a week.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+</head>
+<body>
+
+  <canvas id="webgl-canvas"></canvas>
+
+  <nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+        <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+        <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+        <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+        <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="doc-header">
+      <p class="section-label" data-letter-stagger>Portfolio Showcase</p>
+      <h1>Daintree Thai Boxing</h1>
+      <p class="tagline">A complete web platform for a personal Muay Thai coaching business in the Daintree Rainforest. Built and deployed in under a week. Designed from scratch — not a template, not a theme.</p>
+      <hr class="accent-rule">
+
+      <div class="contact-line">
+        Live at: <a href="https://daintreethaiboxing.com" target="_blank">daintreethaiboxing.com</a><br>
+        Client: Kru Din, Daintree QLD · Type: Muay Thai training platform + 10 AI coaching tools<br>
+        Built by: Marc Dinnerville · <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a>
+      </div>
+
+      <div class="stats" data-stagger>
+        <div class="stat">
+          <span class="stat__number" data-count="10">10</span>
+          <span class="stat__label">AI-Powered Tools</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">&lt;1wk</span>
+          <span class="stat__label">Build Time</span>
+        </div>
+        <div class="stat stat--highlight">
+          <span class="stat__number" data-count="0">$0</span>
+          <span class="stat__label">Monthly Cost</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="95">95+</span>
+          <span class="stat__label">PageSpeed</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-count="300">300+</span>
+          <span class="stat__label">Edge Locations</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint__text">Scroll</span>
+        <span class="scroll-hint__line"></span>
+      </div>
+    </header>
+
+    <!-- ==================== INTRO ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>What This Document Covers</p>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>This document is a technical and functional overview of the Daintree Thai Boxing website — a live production platform at <a href="https://daintreethaiboxing.com" target="_blank">daintreethaiboxing.com</a>. It explains what the site does, how it's built, and why the architecture decisions matter.</p>
+        <p>Inside you'll find: what visitors and the business owner can do on the platform, the full technology stack and why each layer was chosen, a breakdown of all 10 AI-powered tools and how they work, the admin dashboard and its six management panels, the multi-layer AI security system, the four-layer smart caching architecture, and real performance benchmarks compared to industry-standard WordPress equivalents.</p>
+        <p><strong>For business readers:</strong> this shows what a modern web platform actually looks like when it's built properly — fast, intelligent, and with zero ongoing hosting costs. <strong>For technical readers:</strong> it covers the architecture from SSR and selective hydration through to Workers AI inference, semantic caching, and KV-backed rate limiting.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 01 — PLATFORM ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>01 — What The Platform Does</p>
+      <h2 data-reveal>A complete online presence — not just a website.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Daintree Thai Boxing is a full web platform for Kru Din — a Muay Thai trainer offering authentic Thai boxing training in a rainforest setting. The site goes well beyond a standard business website: it handles enquiries, runs AI-powered coaching tools, publishes content, manages reviews and bookings, and gives Kru Din a clear view of everything happening across the business — all from a single admin dashboard.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 02 — TECH STACK ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>02 — Technology Stack</p>
+      <h2 data-reveal>Every layer is chosen for a reason.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>The result is a site that loads in under one second from anywhere in the world, costs nothing to host, and requires zero server maintenance.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>What It Does</th>
+              <th>Technology</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Builds the website</td><td><strong>Astro 5</strong></td><td>Server-rendered pages arrive fully formed — fast and SEO-friendly</td></tr>
+            <tr><td>Makes it interactive</td><td><strong>Solid.js</strong></td><td>Reactive islands for chatbots, generators — no unnecessary JS</td></tr>
+            <tr><td>Hosts everything</td><td><strong>Cloudflare Pages</strong></td><td>Served from 300+ edge locations worldwide. Free tier</td></tr>
+            <tr><td>Stores all data</td><td><strong>Cloudflare D1</strong></td><td>Serverless SQLite — zero maintenance, no patching</td></tr>
+            <tr><td>Powers all 10 AI tools</td><td><strong>Workers AI (Llama 3.1 8B)</strong></td><td>No monthly API fees. Free tier — 10,000 requests/day</td></tr>
+            <tr><td>Sends emails</td><td><strong>Resend</strong></td><td>Transactional email — 3,000/month free</td></tr>
+            <tr><td>Blocks spam</td><td><strong>Cloudflare Turnstile</strong></td><td>Invisible bot protection — no CAPTCHAs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 03 — DESIGN ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>03 — Design &amp; Experience</p>
+      <h2 data-reveal>Deep forest greens, warm gold accents, editorial typography.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>The aesthetic makes the Daintree feel visceral before a visitor reads a single word.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card card--gold-left">
+          <h4>What Visitors Can Do</h4>
+          <ul class="feature-list">
+            <li>Learn about training options, packages, and pricing</li>
+            <li>Book sessions and check real-time availability</li>
+            <li>Chat with three AI assistants (training, techniques, Daintree area)</li>
+            <li>Generate personalised training plans, nutrition guides, warmups</li>
+            <li>Track training progress with a digital journal</li>
+            <li>Explore multi-day immersive training camps</li>
+            <li>Get Daintree area itineraries and travel planning from the AI</li>
+          </ul>
+        </div>
+        <div class="card card--gold-left">
+          <h4>What Kru Din Can Do (Admin)</h4>
+          <ul class="feature-list">
+            <li>View all enquiries in a private admin dashboard</li>
+            <li>Generate AI reply drafts written in his voice</li>
+            <li>See what customers are asking the chatbots</li>
+            <li>Track popular questions and conversation patterns</li>
+            <li>Monitor for abuse attempts with detailed analytics</li>
+            <li>Publish blog posts with AI-generated drafts</li>
+            <li>Control availability and session scheduling</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card">
+          <h4>Dark &amp; Light Mode</h4>
+          <p>Complete alternate theme — every element, table, form, and animation adapts correctly across both modes.</p>
+        </div>
+        <div class="card">
+          <h4>Scroll Animations</h4>
+          <p>GSAP + ScrollTrigger with Lenis smooth scroll — hardware-accelerated with considered pacing.</p>
+        </div>
+        <div class="card">
+          <h4>Page Transitions</h4>
+          <p>View Transitions API — navigation feels fluid and app-like, not like traditional page reloads.</p>
+        </div>
+        <div class="card">
+          <h4>Premium Details</h4>
+          <p>Custom cursor, atmospheric loading screen, particle effects, ambient sound toggle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 — AI TOOLS ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>04 — 10 AI-Powered Tools</p>
+      <h2 data-reveal>Each tool built for a specific moment in the visitor's journey.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Every AI feature runs on Cloudflare Workers AI (Llama 3.1 8B) — no monthly API fees, no ChatGPT subscription, no third-party dependency. Each tool has its own system prompt with personality boundaries, structured output rules, and domain constraints. For the business, this means 10 intelligent features at zero ongoing cost.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tool</th>
+              <th>What It Does</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td><strong>AI Chat (Kru Din)</strong></td><td>Designed AI character trained on every business fact. Time-aware greetings, proactive page-based triggers.</td></tr>
+            <tr><td>02</td><td><strong>Training Plan Generator</strong></td><td>Personalised multi-week Muay Thai plans based on fitness, goals, schedule. Saved with shareable URL.</td></tr>
+            <tr><td>03</td><td><strong>Training Journal</strong></td><td>Session logging with AI comparison against previous sessions — individual history analysis.</td></tr>
+            <tr><td>04</td><td><strong>Package Recommender</strong></td><td>Guided quiz matching experience, goals, and duration to the right package.</td></tr>
+            <tr><td>05</td><td><strong>Technique Coach</strong></td><td>Interactive technique guidance: strikes, footwork, combinations. Safety-first approach.</td></tr>
+            <tr><td>06</td><td><strong>Warm-Up Generator</strong></td><td>Custom pre-session warmups tailored to level, session type, and injuries.</td></tr>
+            <tr><td>07</td><td><strong>Nutrition Planner</strong></td><td>Tailored nutrition plans around training goals, dietary restrictions, local availability.</td></tr>
+            <tr><td>08</td><td><strong>Smart FAQ Search</strong></td><td>AI-powered — understands what visitors are actually asking, not just keywords.</td></tr>
+            <tr><td>09</td><td><strong>Trip Planner</strong></td><td>Daintree area itineraries: accommodation, activities, transport, timing.</td></tr>
+            <tr><td>10</td><td><strong>Nature Guide</strong></td><td>Local wildlife and rainforest info. Recognises returning visitors.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 05 — CHATBOT DETAIL ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>05 — AI Chatbot Detail</p>
+      <h2 data-reveal>Three distinct AI personas.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Each with a specific role and voice. All share the same security infrastructure but have separate system prompts, domain boundaries, and conversation styles.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card card--gold-left">
+          <h4>Kru Din Training Assistant</h4>
+          <p>Primary business chatbot trained on session types, pricing, packages, gear, and Kru Din's background. Speaks as Kru Din: direct, encouraging, no corporate fluff. Proactive triggers based on which page the visitor is browsing.</p>
+        </div>
+        <div class="card card--gold-left">
+          <h4>Daintree Nature Guide</h4>
+          <p>Wildlife (cassowaries, crocs, birds), swimming spots, wet/dry season, walking tracks, stinger season. Recognises returning visitors. Redirects cultural questions to Indigenous centres.</p>
+        </div>
+        <div class="card card--gold-left">
+          <h4>Technique Coach</h4>
+          <p>Strikes, defence, clinch work, sweeps, common mistakes, drills. Clear, instructional, safety-first. Always emphasises "train with Kru Din for real feedback."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06 — ADMIN ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>06 — Admin Dashboard</p>
+      <h2 data-reveal>Six panels. One screen. Any device.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Kru Din manages his entire online business from a single private dashboard — no logging into five different services. Everything is designed around the workflow of a sole operator who needs answers fast.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card">
+          <h4>Message Inbox</h4>
+          <p>Every enquiry in one place. One-click AI reply generation written in the business's voice.</p>
+        </div>
+        <div class="card">
+          <h4>Review Moderation</h4>
+          <p>Testimonials held pending until approved. Approved reviews go live on the site instantly.</p>
+        </div>
+        <div class="card">
+          <h4>Analytics Dashboard</h4>
+          <p>Enquiries, AI sessions, journals, bookings. AI-generated narrative summary in plain English.</p>
+        </div>
+        <div class="card">
+          <h4>Content Writer</h4>
+          <p>AI generates blog posts — title, excerpt, SEO, body. Draft or publish with one click. Also Facebook posts.</p>
+        </div>
+        <div class="card">
+          <h4>Availability Manager</h4>
+          <p>Control bookable days and times. Visitors see real-time availability — no double-booking.</p>
+        </div>
+        <div class="card">
+          <h4>FAQ Pattern Analysis</h4>
+          <p>Surfaces what visitors ask the AI chatbots — reveals content gaps you didn't anticipate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 07 — SECURITY ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>07 — AI Security</p>
+      <h2 data-reveal>Multi-layer protection against misuse.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>AI chatbots on public websites attract abuse attempts — jailbreaks, role-play attacks, prompt injections. This system handles all of it automatically. The site protects itself without anyone needing to monitor it 24/7.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Protection</th>
+              <th>What It Stops</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Input</td><td><strong>Jailbreak Detection</strong></td><td>"Ignore your instructions" — prompt injection attempts</td></tr>
+            <tr><td>Input</td><td><strong>Role-Play Prevention</strong></td><td>"You are now a different AI" — identity override tricks</td></tr>
+            <tr><td>Input</td><td><strong>Length Limits</strong></td><td>Long messages designed to confuse the model</td></tr>
+            <tr><td>Output</td><td><strong>Response Validation</strong></td><td>Catches the AI breaking character or leaking instructions</td></tr>
+            <tr><td>Output</td><td><strong>Topic Boundaries</strong></td><td>Blocks responses outside the chatbot's domain</td></tr>
+            <tr><td>Abuse</td><td><strong>Rate Limiting</strong></td><td>Max 10 messages/min per person — prevents flooding</td></tr>
+            <tr><td>Abuse</td><td><strong>Progressive Slowdown</strong></td><td>3+ blocked attempts = forced delays</td></tr>
+            <tr><td>Abuse</td><td><strong>Temporary Bans</strong></td><td>5+ blocked attempts = 1-hour lockout</td></tr>
+            <tr><td>Abuse</td><td><strong>IP Tracking</strong></td><td>Repeat offenders tracked across sessions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 08 — CACHING ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>08 — Smart Caching — 4 Layers</p>
+      <h2 data-reveal>Not every question needs to call the AI model.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>A four-layer caching system resolves approximately 70% of all queries from cache — faster for visitors and free for the business.</p>
+      </div>
+
+      <div class="layer-row" data-stagger>
+        <div class="layer">
+          <span class="layer__label">Layer 1</span>
+          <h4 class="layer__title">Exact Match</h4>
+          <p class="layer__text">Same question asked before → cached answer instantly. Zero AI cost.</p>
+        </div>
+        <div class="layer">
+          <span class="layer__label">Layer 2</span>
+          <h4 class="layer__title">FAQ Keywords</h4>
+          <p class="layer__text">"How much is a session?" matches FAQ database. Instant, free.</p>
+        </div>
+        <div class="layer">
+          <span class="layer__label">Layer 3</span>
+          <h4 class="layer__title">Semantic Similarity</h4>
+          <p class="layer__text">Different wording, same meaning → matched via AI embeddings.</p>
+        </div>
+        <div class="layer">
+          <span class="layer__label">Layer 4</span>
+          <h4 class="layer__title">Fresh AI</h4>
+          <p class="layer__text">Only genuinely novel questions call the model. ~30% of traffic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 09 — PERFORMANCE ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>09 — Performance &amp; Costs</p>
+      <h2 data-reveal>Real numbers. Not marketing claims.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>These are measured results from the live production site, compared against typical WordPress equivalents running similar functionality.</p>
+      </div>
+
+      <div class="highlight-box" data-reveal-scale>
+        <span class="highlight-box__value">~70% from cache</span>
+        <p>Most AI queries answered from cache at sub-50ms latency. Fast for visitors, free for the business.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>This Site</th>
+              <th>WordPress Equivalent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Page load</td><td><strong>Under 1 second</strong></td><td>3–5 seconds</td></tr>
+            <tr><td>Mobile PageSpeed</td><td><strong>95+</strong></td><td>40–60</td></tr>
+            <tr><td>Server response (TTFB)</td><td><strong>50ms</strong></td><td>500ms+</td></tr>
+            <tr><td>First Contentful Paint</td><td><strong>&lt;1s</strong></td><td>2–4s</td></tr>
+            <tr><td>Time to Interactive</td><td><strong>&lt;2s</strong></td><td>5–10s</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box" data-reveal-scale>
+        <span class="highlight-box__value">$0/month</span>
+        <p>Everything runs on Cloudflare's free tier — hosting, database, AI, bot protection, email. If built with paid AI services and managed hosting, the equivalent would cost $400–$1,200/month. The only cost is the domain name at ~$15/year.</p>
+      </div>
+    </section>
+
+    <!-- ==================== BOTTOM LINE ==================== -->
+    <section class="section">
+      <div class="cta-block" data-reveal-scale>
+        <p class="section-label" data-letter-stagger>The Bottom Line</p>
+        <h3 style="color: var(--cream); font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 1rem;">10 AI features. $0/month. Built in under a week.</h3>
+        <div class="prose" style="text-align: center; margin: 0 auto;">
+          <p>A production web platform with custom design, 10 AI tools, a 6-panel admin dashboard, multi-layer security, semantic caching, and enterprise-grade performance — running entirely on Cloudflare's free tier.</p>
+        </div>
+        <p style="margin-top: 1.5rem;">Designed and developed by Marc Dinnerville · <a href="mailto:allgoodnow@mailfence.com" style="color: var(--gold);">allgoodnow@mailfence.com</a></p>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="doc-footer">
+      <span class="doc-footer__brand">Marc Dinnerville</span>
+      <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>

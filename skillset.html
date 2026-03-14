@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Skill Set — Marc Dinnerville | Web Developer Portfolio</title>
+  <meta name="description" content="AI Integration Specialist & Full-Stack Web Developer. 20+ years building modern websites, integrating AI, and applying cybersecurity expertise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+</head>
+<body>
+
+  <canvas id="webgl-canvas"></canvas>
+
+  <nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+        <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+        <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+        <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+        <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="doc-header">
+    <p class="section-label" data-letter-stagger>Skill Set</p>
+    <h1>Marc Dinnerville</h1>
+    <p class="tagline">AI Integration Specialist &amp; Full-Stack Web Developer</p>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="contact-line">
+      Far North Queensland, Australia<br>
+      <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat__number">AI</span>
+        <span class="stat__label">Integration</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">Full</span>
+        <span class="stat__label">Stack Web</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">Cyber</span>
+        <span class="stat__label">Security</span>
+      </div>
+      <div class="stat stat--highlight">
+        <span class="stat__number">20+</span>
+        <span class="stat__label">Years Building</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span class="scroll-hint__text">Scroll</span>
+    <span class="scroll-hint__line"></span>
+  </div>
+
+  <!-- ==================== INTRO ==================== -->
+  <section class="section">
+    <div class="prose" data-reveal>
+      <p>I build modern websites, integrate AI into real business workflows, and bring two decades of hands-on experience across web development, cybersecurity, server administration, and audio engineering. My focus now is on AI integration — training chatbots with real personality, embedding intelligent assistants into websites, and building tools that actually help people.</p>
+      <p>Everything I build runs lean: no bloated platforms, no monthly fees eating into a client's revenue, no vendor lock-in. I use modern serverless architecture and edge computing to deliver sites that load in under a second and cost nothing to host.</p>
+    </div>
+  </section>
+
+  <!-- ==================== 01 — AI INTEGRATION ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>01 — AI Integration</p>
+    <h2 data-reveal>Training machines to sound like real people.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>This is the direction. AI isn't a feature to bolt on — it's a layer that makes everything smarter. I specialise in integrating AI into websites and business tools in ways that feel natural, useful, and genuinely helpful rather than gimmicky.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>AI Chatbot Development</h4>
+        <ul class="feature-list">
+          <li>Custom AI personas trained on real business knowledge</li>
+          <li>Deep personality systems — voice, tone, vocabulary, conversational style</li>
+          <li>FAQ matching for instant zero-cost responses before AI inference</li>
+          <li>Cart-aware shopping assistants that know what customers are browsing</li>
+          <li>Synonym recognition and natural language understanding</li>
+          <li>Voice consistency checking — every response verified against the persona</li>
+          <li>Proactive conversation triggers based on user behaviour</li>
+        </ul>
+      </div>
+      <div class="card card--gold-left">
+        <h4>AI-Powered Business Tools</h4>
+        <ul class="feature-list">
+          <li>AI-suggested email replies written in the business owner's voice</li>
+          <li>AI content generation for blogs, product descriptions, SEO metadata</li>
+          <li>Conversation analytics — tracking what customers ask and finding patterns</li>
+          <li>Multi-persona systems — different AI assistants for different business functions</li>
+          <li>Knowledge base architecture — organising business facts for AI consumption</li>
+          <li>Anti-hallucination engineering — keeping AI honest and on-topic</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>Workers AI</h4>
+        <p>Cloudflare Workers AI with Llama 3.1 8B. Edge inference, no external API calls, no per-token billing.</p>
+      </div>
+      <div class="card">
+        <h4>Prompt Engineering</h4>
+        <p>Deep system prompts with personality, knowledge domains, conversation rules, and anti-hallucination safeguards.</p>
+      </div>
+      <div class="card">
+        <h4>AI Persona Training</h4>
+        <p>Building AI characters with authentic voice, personality, and domain knowledge. From shopping assistants to memorial chatbots.</p>
+      </div>
+      <div class="card">
+        <h4>AI Agent Orchestration</h4>
+        <p>Running multiple Anthropic Claude agents in parallel &mdash; coordinating development, SEO, deployment, and code review simultaneously. Custom skill systems, persistent memory, MCP server integration, and structured workflows across concurrent AI sessions.</p>
+      </div>
+      <div class="card">
+        <h4>Research &amp; Experimentation</h4>
+        <p>Constantly exploring new AI capabilities — voice synthesis, face animation, RAG pipelines, multimodal interfaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 02 — WEB DEVELOPMENT ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>02 — Full-Stack Web Development</p>
+    <h2 data-reveal>Modern sites that load fast and cost nothing to run.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>I've moved with the times. Started with Apache and Nginx on VPS boxes, now I build on Astro and Cloudflare's edge network. The result: sites that outperform WordPress by 3-6x on every metric, with zero monthly hosting fees and no platform taking a percentage of every sale.</p>
+    </div>
+
+    <h3 data-reveal>Current Stack</h3>
+    <div class="table-wrap" data-reveal-scale>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Framework</strong></td><td>Astro 5.x SSR</td><td>Island architecture — only ships JS where needed</td></tr>
+          <tr><td><strong>Interactive UI</strong></td><td>Solid.js</td><td>Fine-grained reactivity, no virtual DOM overhead</td></tr>
+          <tr><td><strong>Hosting</strong></td><td>Cloudflare Pages</td><td>Edge network, free tier, zero cold starts</td></tr>
+          <tr><td><strong>Database</strong></td><td>Cloudflare D1 (SQLite)</td><td>Serverless SQL at the edge, no connection pooling</td></tr>
+          <tr><td><strong>Object Storage</strong></td><td>Cloudflare R2</td><td>S3-compatible, zero egress fees</td></tr>
+          <tr><td><strong>AI</strong></td><td>Workers AI</td><td>Edge inference, no API keys, no per-token cost</td></tr>
+          <tr><td><strong>Payments</strong></td><td>Stripe Elements</td><td>PCI compliant, card data never touches the server</td></tr>
+          <tr><td><strong>Email</strong></td><td>Resend API</td><td>Transactional email with custom domains</td></tr>
+          <tr><td><strong>Forms</strong></td><td>Cloudflare Turnstile</td><td>Invisible bot protection, no CAPTCHAs</td></tr>
+          <tr><td><strong>Animation</strong></td><td>GSAP + Lenis</td><td>Smooth scroll, parallax, reveal animations</td></tr>
+          <tr><td><strong>Search</strong></td><td>Pagefind</td><td>Client-side search, zero server cost</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 data-reveal>What I Build</h3>
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>E-Commerce</h4>
+        <p>Full online stores — product catalogues, persistent carts, Stripe checkout, order management, shipping calculators. No Shopify fees.</p>
+      </div>
+      <div class="card">
+        <h4>Business Websites</h4>
+        <p>Service pages, booking forms, contact systems, admin dashboards, blog platforms, newsletter systems. Everything a small business needs.</p>
+      </div>
+      <div class="card">
+        <h4>Admin Dashboards</h4>
+        <p>Private management portals — message inboxes, subscriber management, order tracking, analytics, content management.</p>
+      </div>
+      <div class="card">
+        <h4>Design Systems</h4>
+        <p>Dark/light mode, scroll animations, responsive layouts, SVG effects, custom typography. Every site has a distinct visual identity.</p>
+      </div>
+    </div>
+
+    <h3 data-reveal>Frontend Skills</h3>
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Core</h4>
+        <ul class="feature-list">
+          <li>HTML5, CSS3, JavaScript, TypeScript</li>
+          <li>Astro (primary framework), Solid.js (interactive components)</li>
+          <li>React (familiar, not preferred)</li>
+          <li>CSS architecture — custom properties, clamp(), grid, flexbox</li>
+          <li>Responsive design and mobile-first development</li>
+          <li>SEO — JSON-LD schemas, Open Graph, sitemaps, canonical URLs</li>
+        </ul>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Backend &amp; APIs</h4>
+        <ul class="feature-list">
+          <li>Node.js, serverless functions, edge computing</li>
+          <li>REST API design and implementation</li>
+          <li>SQL (D1/SQLite), KV stores, R2 object storage</li>
+          <li>Authentication — HTTP Basic, CSRF, timing-safe comparison</li>
+          <li>Rate limiting, input validation, honeypot patterns</li>
+          <li>Email integration — transactional, newsletters, double opt-in</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 — CYBERSECURITY ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>03 — Cybersecurity</p>
+    <h2 data-reveal>Trained by the military. Applied to the web.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>I was employed in cybersecurity for the Australian military. That background shaped how I think about every system I build — from form validation to server hardening. Security isn't a feature I add at the end; it's how I think from the first line of code.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Web Application Security</h4>
+        <ul class="feature-list">
+          <li>OWASP Top 10 — XSS, CSRF, SQL injection, broken authentication</li>
+          <li>Cloudflare Turnstile — invisible bot protection on all public forms</li>
+          <li>KV-backed rate limiting with sliding window counters</li>
+          <li>Timing-safe authentication to prevent side-channel attacks</li>
+          <li>Stripe PCI compliance — tokenised payments, no card data on server</li>
+          <li>Honeypot fields, input sanitisation, output encoding</li>
+          <li>CSRF token protection on every form submission</li>
+        </ul>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Network &amp; Infrastructure Security</h4>
+        <ul class="feature-list">
+          <li>Deep packet inspection — Wireshark, tcpdump, protocol analysis</li>
+          <li>Log analysis — reading server logs, tracing IP addresses, identifying attack patterns</li>
+          <li>Server hardening — firewall configuration, SSH lockdown, fail2ban, port management</li>
+          <li>VPN configuration and secure remote access</li>
+          <li>Incident detection and response</li>
+          <li>Monitoring and alerting for suspicious activity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 04 — SERVER & INFRASTRUCTURE ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>04 — Server &amp; Infrastructure</p>
+    <h2 data-reveal>From bare metal to serverless edge.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>I've managed my own VPS infrastructure for years — deploying web applications on Linux servers, configuring security, managing DNS, keeping bots out. Now I build on Cloudflare's serverless platform, but the deep infrastructure knowledge still informs everything.</p>
+    </div>
+
+    <div class="table-wrap" data-reveal-scale>
+      <table>
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Linux Administration</strong></td><td>Fedora (primary), Ubuntu, Debian. CLI-native, bash scripting, systemd, package management, cron jobs</td></tr>
+          <tr><td><strong>Windows</strong></td><td>Daily driver for development. PowerShell, WSL, cross-platform tooling</td></tr>
+          <tr><td><strong>VPS Management</strong></td><td>Digital Ocean droplets, other providers. Full server provisioning, security hardening, deployment</td></tr>
+          <tr><td><strong>Web Servers (Legacy)</strong></td><td>Nginx, Apache — configuration, virtual hosts, SSL/TLS, reverse proxy, performance tuning</td></tr>
+          <tr><td><strong>DNS &amp; Domains</strong></td><td>Cloudflare DNS management, domain registration, MX records, DKIM/SPF/DMARC, zone configuration</td></tr>
+          <tr><td><strong>Serverless (Current)</strong></td><td>Cloudflare Workers, Pages Functions, D1, KV, R2, Queues. Edge-first architecture</td></tr>
+          <tr><td><strong>Deployment</strong></td><td>Wrangler CLI, Cloudflare Pages, environment management, secret rotation, rollback procedures</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== 05 — PROGRAMMING ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>05 — Programming Languages &amp; Tools</p>
+    <h2 data-reveal>The right tool for the job. Not a purist — a pragmatist.</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="table-wrap" data-reveal-scale>
+      <table>
+        <thead>
+          <tr>
+            <th>Language / Tool</th>
+            <th>Proficiency</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>JavaScript</strong></td><td>Primary</td><td>Web applications, serverless functions, interactive components</td></tr>
+          <tr><td><strong>TypeScript</strong></td><td>Primary</td><td>Type-safe development, API contracts, large codebases</td></tr>
+          <tr><td><strong>Python</strong></td><td>Working</td><td>Scripting, automation, data analysis, trading bots</td></tr>
+          <tr><td><strong>SQL</strong></td><td>Working</td><td>D1/SQLite queries, schema design, data migrations</td></tr>
+          <tr><td><strong>Bash</strong></td><td>Working</td><td>Server automation, deployment scripts, system administration</td></tr>
+          <tr><td><strong>HTML / CSS</strong></td><td>Expert</td><td>Semantic markup, responsive design, custom properties, animations</td></tr>
+          <tr><td><strong>FFmpeg</strong></td><td>Working</td><td>Media processing, format conversion, audio/video manipulation</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 data-reveal>Frameworks &amp; Libraries</h3>
+    <div class="tag-row" data-stagger>
+      <span class="tag">Astro</span>
+      <span class="tag">Solid.js</span>
+      <span class="tag">React</span>
+      <span class="tag">GSAP</span>
+      <span class="tag">Lenis</span>
+      <span class="tag">Stripe</span>
+      <span class="tag">Pagefind</span>
+      <span class="tag">Wrangler</span>
+      <span class="tag">Resend</span>
+      <span class="tag">Turnstile</span>
+    </div>
+
+    <h3 data-reveal>Platforms &amp; Services</h3>
+    <div class="tag-row" data-stagger>
+      <span class="tag">Cloudflare Pages</span>
+      <span class="tag">Workers AI</span>
+      <span class="tag">D1</span>
+      <span class="tag">R2</span>
+      <span class="tag">KV</span>
+      <span class="tag">Digital Ocean</span>
+      <span class="tag">Stripe</span>
+      <span class="tag">Resend</span>
+    </div>
+  </section>
+
+  <!-- ==================== 06 — MEDIA & CREATIVE ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>06 — Media &amp; Creative</p>
+    <h2 data-reveal>Sound engineer turned web developer.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>Before web development, I worked as a sound engineer. That background gives me a different perspective on user experience — rhythm, timing, feel. It also means I'm comfortable with audio processing, media workflows, and the creative side of technical work.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>Audio Engineering</h4>
+        <p>Professional sound engineering background. Live mixing, studio production, mastering. Drum and bass mixing.</p>
+      </div>
+      <div class="card">
+        <h4>Media Processing</h4>
+        <p>FFmpeg workflows — format conversion, audio extraction, video processing, batch operations.</p>
+      </div>
+      <div class="card">
+        <h4>Graphics &amp; Visual Design</h4>
+        <p>Web graphics, SVG animation, design systems, colour theory, typography. Every site gets a unique visual identity.</p>
+      </div>
+      <div class="card">
+        <h4>AI Voice &amp; Face</h4>
+        <p>Exploring voice synthesis, face animation, and personality-driven AI interfaces. Building interactive AI characters with authentic presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 07 — DATA & AUTOMATION ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>07 — Data &amp; Automation</p>
+    <h2 data-reveal>If there's a program, I can learn to use it.</h2>
+    <hr class="accent-rule" data-reveal>
+    <div class="prose" data-reveal>
+      <p>I've built trading bots that analyse market data, automated server deployments, and created data pipelines. The constant is a willingness to research, learn, and build whatever's needed. In today's world, if you can research and think critically, there's nothing you can't figure out.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>Trading Bots</h4>
+        <p>Automated trading systems — market data analysis, signal processing, strategy implementation, backtesting.</p>
+      </div>
+      <div class="card">
+        <h4>Automation Scripts</h4>
+        <p>Bash and Python automation — deployment pipelines, data processing, scheduled tasks, system monitoring.</p>
+      </div>
+      <div class="card">
+        <h4>Data Analysis</h4>
+        <p>Log analysis, customer behaviour patterns, AI conversation analytics, market data, performance metrics.</p>
+      </div>
+      <div class="card">
+        <h4>API Integration</h4>
+        <p>Connecting services — payment processors, email providers, AI endpoints, third-party data sources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 08 — APPROACH ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>08 — How I Work</p>
+    <h2 data-reveal>Build it right. Own it completely. Pay nothing monthly.</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Philosophy</h4>
+        <ul class="feature-list">
+          <li>No bloated platforms — every line of code serves a purpose</li>
+          <li>No vendor lock-in — clients own their code, their data, their domain</li>
+          <li>No monthly fees — serverless architecture means $0 hosting for most sites</li>
+          <li>Security from the ground up — not bolted on as an afterthought</li>
+          <li>Performance matters — sub-second load times, 95+ PageSpeed scores</li>
+          <li>AI should help, not annoy — every AI integration solves a real problem</li>
+        </ul>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Process</h4>
+        <ul class="feature-list">
+          <li>Understand the business before writing code</li>
+          <li>Build iteratively — ship early, refine based on real use</li>
+          <li>Document everything — future-proof handover</li>
+          <li>Test before deploying — every change verified before it goes live</li>
+          <li>Support after launch — not a build-and-disappear developer</li>
+          <li>Patient, thorough, detail-oriented — quality over speed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SUMMARY ==================== -->
+  <section class="section">
+    <div class="cta-block" data-reveal-scale>
+      <p class="section-label">Let's Build Something</p>
+      <h3 style="color: var(--cream); font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 1rem;">AI integration. Modern websites. Real security.</h3>
+      <div class="prose" style="text-align: center; margin: 0 auto;">
+        <p>Whether you need an AI chatbot that actually sounds like your business, a website that outperforms WordPress by 3x, or someone who understands both the code and the infrastructure underneath it — let's talk.</p>
+      </div>
+      <p style="margin-top: 1.5rem;"><a href="mailto:allgoodnow@mailfence.com" style="color: var(--gold); font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.6rem); text-decoration: none; font-weight: 600;">allgoodnow@mailfence.com</a></p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--cream-faint);">Marc Dinnerville · Far North Queensland</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="doc-footer">
+    <span class="doc-footer__brand">Marc Dinnerville</span>
+    <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+  </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>

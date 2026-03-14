@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Marc Dinnerville — Web Developer</title>
+  <meta name="description" content="Custom web platforms with integrated AI. Astro 5, Solid.js, Cloudflare, Workers AI. Marc Dinnerville — Far North Queensland.">
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Force nav visible on landing page */
+    .site-nav { transform: translateY(0) !important; }
+
+    /* Primary CTA — Client Guide */
+    .landing-cta {
+      display: inline-block;
+      padding: 1rem 3rem;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: rgba(200,149,42,0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+    .landing-cta:hover {
+      background: rgba(200,149,42,0.2);
+      box-shadow: 0 0 25px rgba(200,149,42,0.2);
+      transform: translateY(-2px);
+    }
+    .landing-cta__sub {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--cream-faint);
+      margin-bottom: 0.3rem;
+      font-weight: 400;
+    }
+
+    /* Three-across row */
+    .landing-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .landing-row a {
+      flex: 1;
+      max-width: 220px;
+      display: block;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-card);
+      border-radius: 4px;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      background: var(--bg-glass);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+    .landing-row a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 0 20px rgba(200,149,42,0.12);
+      transform: translateY(-2px);
+    }
+    .landing-row__label {
+      display: block;
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+      font-weight: 500;
+    }
+
+    .landing-email {
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      color: var(--cream-faint);
+      letter-spacing: 0.05em;
+    }
+    .landing-email a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .landing-email a:hover {
+      color: var(--gold-bright);
+    }
+
+    .landing-more {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .landing-more a {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .landing-more a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 480px) {
+      .landing-hero__title { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 0.5rem; }
+      .landing-hero__sub { margin-bottom: 0.25rem; }
+      .landing-hero__name { margin-bottom: 1rem; }
+      .landing-cta { padding: 0.75rem 2rem; font-size: 0.75rem; margin-top: 1.25rem; }
+      .landing-row { gap: 0.5rem; margin-top: 1rem; }
+      .landing-row a { padding: 0.6rem 0.5rem; font-size: 0.6rem; }
+      .landing-row__label { font-size: 0.45rem; }
+      .landing-email { margin-top: 1rem; font-size: 0.75rem; }
+      .landing-more { margin-top: 0.75rem; gap: 1rem; }
+      .landing-hero { padding: 0.5rem 0; min-height: 100svh; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- WebGL particle canvas -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="site-nav site-nav--visible" role="navigation" aria-label="Portfolio navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+      <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+      <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+      <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+      <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+      <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ SINGLE-SCREEN LANDING ============ -->
+<div class="page-content">
+
+  <section class="landing-hero">
+    <div style="text-align: center;">
+      <p class="section-label" data-letter-stagger>Web Developer &middot; 2026</p>
+      <h1 class="landing-hero__title glow-text">Marc Dinnerville</h1>
+      <p class="landing-hero__sub">Custom platforms with integrated AI</p>
+      <p class="landing-hero__name">Far North Queensland, Australia</p>
+
+      <a href="client-guide.html" class="landing-cta">
+        <span class="landing-cta__sub">Start here</span>
+        Client Guide
+      </a>
+
+      <div class="landing-row" data-stagger>
+        <a href="dtb-showcase.html">
+          <span class="landing-row__label">Case Study</span>
+          Daintree Thai Boxing
+        </a>
+        <a href="stix-pebbles-showcase.html">
+          <span class="landing-row__label">Case Study</span>
+          Stix &amp; Pebbles
+        </a>
+        <a href="resume.html">
+          <span class="landing-row__label">Background</span>
+          Resume
+        </a>
+      </div>
+
+      <p class="landing-email">
+        <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a>
+      </p>
+
+      <div class="landing-more">
+        <a href="skillset.html">Skills</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- CDN Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<!-- V2 Scripts -->
+<script src="js/effects.js"></script>
+<script src="js/nav.js"></script>
+
+</body>
+</html>

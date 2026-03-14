@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Stix &amp; Pebbles — Portfolio Showcase | Marc Dinnerville</title>
+  <meta name="description" content="A complete e-commerce platform for a handmade craft business in Far North Queensland. Products made from natural materials — river stones, driftwood, creek crystals, mountain rocks, weathered timber.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+</head>
+<body>
+
+  <canvas id="webgl-canvas"></canvas>
+
+  <nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+        <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+        <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+        <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+        <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="doc-header">
+      <p class="section-label" data-letter-stagger>Portfolio Showcase</p>
+      <h1>Stix &amp; Pebbles</h1>
+      <p class="tagline">A complete e-commerce platform for a handmade craft business in Far North Queensland. Products made from natural materials — river stones, driftwood, creek crystals, mountain rocks, weathered timber.</p>
+      <hr class="accent-rule">
+
+      <div class="contact-line">
+        Live at: <a href="https://stixandpebbles.pages.dev" target="_blank">stixandpebbles.pages.dev</a> (launching at stixandpebbles.com)<br>
+        Client: Melinda, Irvinebank QLD · Type: Handmade crafts e-commerce + AI chatbot<br>
+        Built by: Marc Dinnerville · <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a>
+      </div>
+
+      <div class="stats" data-stagger>
+        <div class="stat">
+          <span class="stat__number">Full</span>
+          <span class="stat__label">E-Commerce</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">5</span>
+          <span class="stat__label">AU Post Zones</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">Mini Mel</span>
+          <span class="stat__label">AI Assistant</span>
+        </div>
+        <div class="stat stat--highlight">
+          <span class="stat__number">$0</span>
+          <span class="stat__label">Monthly Cost</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="scroll-hint">
+      <span class="scroll-hint__text">Scroll to explore</span>
+      <span class="scroll-hint__arrow">&#8595;</span>
+    </div>
+
+    <!-- ==================== INTRO ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>What This Document Covers</p>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>This document is a technical and functional overview of the Stix &amp; Pebbles e-commerce platform — currently in development at <a href="https://stixandpebbles.pages.dev" target="_blank">stixandpebbles.pages.dev</a> and launching at stixandpebbles.com. It explains what the platform does, how it's built, and what makes it different from a standard Shopify or WooCommerce store.</p>
+        <p>Inside you'll find: the complete e-commerce system including product catalogue, persistent cart, and Stripe checkout; the custom AU Post shipping calculator built from real rate tables across 5 international zones; the "Mini Mel" AI shopping assistant that knows every product and its story; the admin dashboard for managing orders, subscribers, content, and analytics; and the security and SEO architecture underneath it all.</p>
+        <p><strong>For business readers:</strong> this shows what a modern online shop looks like when it's built without platform fees, plugin subscriptions, or percentage cuts on every sale. <strong>For technical readers:</strong> it covers the architecture from Astro SSR through to Stripe Elements tokenisation, weight-based shipping logic, and Workers AI inference with cart-aware context.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 01 — PLATFORM ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>01 — What The Platform Does</p>
+      <h2 data-reveal>A complete online shop — not a template with a buy button.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Stix &amp; Pebbles is a full e-commerce platform for Melinda — an artisan making jewellery, ornaments, and art from natural materials found in Far North Queensland. Each piece has a story tied to where its materials came from, and the site feels like browsing an artist's workshop rather than a warehouse.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card card--gold-left">
+          <h4>What Customers Can Do</h4>
+          <ul class="feature-list">
+            <li>Browse and buy one-of-a-kind handmade pieces</li>
+            <li>Chat with "Mini Mel" — an AI that knows every product</li>
+            <li>Filter by category: Wearables, Bling, Ornaments, Collections</li>
+            <li>Get accurate shipping estimates to anywhere in the world</li>
+            <li>Sign up for newsletters about new pieces</li>
+            <li>Place custom orders for bespoke commissions</li>
+          </ul>
+        </div>
+        <div class="card card--gold-left">
+          <h4>What Melinda Can Do (Admin)</h4>
+          <ul class="feature-list">
+            <li>View messages with AI-suggested replies in her voice</li>
+            <li>Manage newsletter subscribers with double opt-in</li>
+            <li>See analytics on customer questions and patterns</li>
+            <li>Generate blog content with AI assistance</li>
+            <li>Track orders with full customer and shipping details</li>
+            <li>Manage product stock, pricing, and descriptions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 02 — E-COMMERCE ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>02 — E-Commerce Platform</p>
+      <h2 data-reveal>Complete shopping experience. No Shopify. No platform fees.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Every product gets a description, price, materials list, weight (for shipping calculations), and a meaning — the story behind it. Stock is tracked automatically. The cart persists across browser sessions so customers don't lose their selections.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card">
+          <h4>Product Catalogue</h4>
+          <p>Images, descriptions, materials, meanings, stock management for every piece.</p>
+        </div>
+        <div class="card">
+          <h4>Persistent Cart</h4>
+          <p>localStorage — live item count, quantity controls. Survives browser sessions.</p>
+        </div>
+        <div class="card">
+          <h4>Stripe Checkout</h4>
+          <p>PCI compliant — card details never touch the server. Tokenised directly to Stripe.</p>
+        </div>
+        <div class="card">
+          <h4>Order Management</h4>
+          <p>Server-side validation, database storage, confirmation emails, admin order tracking.</p>
+        </div>
+        <div class="card">
+          <h4>Custom Orders</h4>
+          <p>Bespoke commissions page for customers who want personalised pieces.</p>
+        </div>
+      </div>
+
+      <h3 data-reveal>AU Post Shipping Calculator</h3>
+      <div class="prose" data-reveal>
+        <p>A proper logistics tool. Every item has a weight in grams. At checkout, the system adds cart weights plus a packaging allowance, then calculates the correct rate from real Australia Post rate tables across five international zones.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Coverage</th>
+              <th>Rate Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1–2</td><td><strong>Domestic Australia</strong> (Standard + Express)</td><td>Exact AU Post rates</td></tr>
+            <tr><td>3</td><td><strong>New Zealand</strong></td><td>Base + per-kg calculation</td></tr>
+            <tr><td>4</td><td><strong>Asia-Pacific</strong></td><td>Base + per-kg calculation</td></tr>
+            <tr><td>5</td><td><strong>US / UK / Europe / Rest of World</strong></td><td>Base + per-kg calculation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose" data-reveal>
+        <p><strong>Built from real rate tables</strong> — no third-party plugin, no subscription, no external API.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 03 — MINI MEL ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>03 — Mini Mel — The AI Persona</p>
+      <h2 data-reveal>Warm, conversational, knows every product and its story.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Mini Mel is an AI shopping assistant built on Workers AI that helps visitors find the right gift, explains the significance of creek crystals, or describes what makes a particular wind chime resonate. It speaks in Melinda's voice — warm and personal, not corporate. Proactive triggers appear when customers browse specific product pages.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card">
+          <h4>FAQ Matching</h4>
+          <p>Common questions get instant answers from a pre-built FAQ database — no AI inference needed. Faster response, zero cost.</p>
+        </div>
+        <div class="card">
+          <h4>Cart Awareness</h4>
+          <p>Mini Mel knows what's in the customer's cart and makes relevant suggestions based on what they're already buying.</p>
+        </div>
+        <div class="card">
+          <h4>Synonym Recognition</h4>
+          <p>"bracelet" = "bangle" = "wrist piece" — the AI understands product name variations and maps them correctly.</p>
+        </div>
+        <div class="card">
+          <h4>Voice Consistency</h4>
+          <p>Auto-checks every response against Melinda's authentic voice profile. Rewrites anything that sounds generic before the customer sees it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04 — ADMIN ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>04 — Admin Dashboard &amp; Newsletter</p>
+      <h2 data-reveal>Everything in one place. Any device.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Melinda manages her entire online business from a single private dashboard. No logging into separate services for email, analytics, orders, and content. Everything is designed for a sole operator who needs to check in quickly between making pieces.</p>
+      </div>
+
+      <div class="cards" data-stagger>
+        <div class="card">
+          <h4>Message Inbox</h4>
+          <p>All contact form submissions. AI-suggested replies written in Melinda's voice — one click to send.</p>
+        </div>
+        <div class="card">
+          <h4>Subscribers</h4>
+          <p>Full subscriber management. View, search, export. Double opt-in with tokenised one-click unsubscribe.</p>
+        </div>
+        <div class="card">
+          <h4>Analytics</h4>
+          <p>AI conversations, popular questions, visitor locations, voice consistency score across all interactions.</p>
+        </div>
+        <div class="card">
+          <h4>Content Writer</h4>
+          <p>AI generates blog posts by topic. Edit, refine, publish with one click. SEO metadata auto-generated.</p>
+        </div>
+        <div class="card">
+          <h4>Order Management</h4>
+          <p>Orders by status, customer details, item lists, shipping addresses, and internal notes.</p>
+        </div>
+        <div class="card">
+          <h4>Design System</h4>
+          <p>Earth tones, dark/light mode, scroll animations, offline support via service worker.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 — SECURITY ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>05 — Security</p>
+      <h2 data-reveal>Enterprise-grade protection for a one-person business.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p><strong>For non-technical readers:</strong> the site protects itself. Spam is blocked invisibly, payments are handled securely by Stripe, and no customer data is exposed. <strong>For technical readers:</strong> here's the full security stack.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>Protection</th>
+              <th>What It Stops</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Cloudflare Turnstile</strong></td><td>Spam bots — invisible challenge, no CAPTCHAs, zero friction</td></tr>
+            <tr><td><strong>KV-Backed Rate Limiting</strong></td><td>Request flooding — sliding window counters with automatic cooldown</td></tr>
+            <tr><td><strong>Honeypot + Input Validation</strong></td><td>Automated spam submissions and cross-site scripting (XSS)</td></tr>
+            <tr><td><strong>Timing-Safe Authentication</strong></td><td>Password guessing — constant-time comparison prevents timing leaks</td></tr>
+            <tr><td><strong>CSRF Token Protection</strong></td><td>Cross-site request forgery — every form verified with unique tokens</td></tr>
+            <tr><td><strong>Stripe PCI Compliance</strong></td><td>Card data never touches the server — tokenised directly to Stripe</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 06 — SEO ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>06 — SEO &amp; Structured Data</p>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Product, Article, FAQ, LocalBusiness, and Breadcrumb JSON-LD schemas. Dynamic Open Graph and Twitter Card meta per page. Canonical URLs. Auto-generated sitemap. Every product page is individually optimised for search engines.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 07 — PERFORMANCE ==================== -->
+    <section class="section">
+      <p class="section-label" data-reveal>07 — Performance</p>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Measured results from the live development site, compared against a typical WordPress + WooCommerce store running similar product and payment functionality.</p>
+      </div>
+
+      <div class="table-wrap" data-reveal-scale>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>This Site</th>
+              <th>WordPress + WooCommerce</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Page load</td><td><strong>Under 1 second</strong></td><td>3–6 seconds</td></tr>
+            <tr><td>Mobile PageSpeed</td><td><strong>95+</strong></td><td>30–50</td></tr>
+            <tr><td>Google PageSpeed</td><td><strong>95+</strong></td><td>30–60</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== SUMMARY ==================== -->
+    <section class="section">
+      <div class="cta-block">
+        <p class="section-label" data-reveal>Summary</p>
+        <h3 data-reveal style="color: var(--cream); font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 1rem;">Modern e-commerce. $0/month.</h3>
+        <div class="prose" data-reveal style="text-align: center; margin: 0 auto;">
+          <p>Full online store, AI chatbot, AU Post shipping calculator, newsletter system, admin dashboard, enterprise security. No Shopify fees. No WooCommerce plugins. No platform percentage on sales.</p>
+        </div>
+        <p data-reveal style="margin-top: 1.5rem;">Built with Astro, Solid.js, and Cloudflare by Marc Dinnerville · <a href="mailto:allgoodnow@mailfence.com" style="color: var(--gold);">allgoodnow@mailfence.com</a></p>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="doc-footer">
+      <span class="doc-footer__brand">Marc Dinnerville</span>
+      <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/nav.js"></script>
+
+</body>
+</html>

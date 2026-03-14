@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Project Questionnaire | Marc Dinnerville</title>
+  <meta name="description" content="Project questionnaire to scope your custom website build. Answer 26 questions to help me understand what you need.">
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- WebGL particle canvas -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+      <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+      <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+      <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+      <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+      <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ PAGE CONTENT ============ -->
+<div class="page-content">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="doc-header">
+    <p class="section-label" data-letter-stagger>Project Questionnaire</p>
+    <h1>Let's Scope Your Project</h1>
+    <p class="tagline">Answer these questions to help me understand what you need. Don't overthink it — rough answers are fine. We'll refine everything in conversation.</p>
+    <hr class="accent-rule">
+
+    <div class="contact-line">
+      Marc Dinnerville &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a><br>
+      Send this back filled in, or just use it as a conversation starter.
+    </div>
+  </header>
+
+  <div class="scroll-hint">
+    <span class="scroll-hint__arrow"></span>
+  </div>
+
+  <!-- ==================== 01 — YOUR BUSINESS ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>01 — About Your Business</p>
+    <h2 data-reveal>Tell me what you do.</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>I need to understand your business before I can design something that represents it properly. This shapes everything — the design language, the features, the AI personality.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q1</p>
+      <p class="q-block__question">What's your business name?</p>
+      <span class="q-field">Your answer here</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q2</p>
+      <p class="q-block__question">What does your business do? Describe it like you would to someone at a barbecue.</p>
+      <p class="q-block__hint">2–3 sentences is perfect. What do you sell, make, or offer? Who are your customers?</p>
+      <span class="q-field q-field--tall">Your answer here</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q3</p>
+      <p class="q-block__question">Where are you based?</p>
+      <p class="q-block__hint">Town/city and state. This affects SEO, local search, and how I position you.</p>
+      <span class="q-field">Your answer here</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q4</p>
+      <p class="q-block__question">What type of business is this?</p>
+      <ul class="q-options">
+        <li>Service-based (you do something for people — training, tours, repairs, consulting)</li>
+        <li>Product-based (you sell physical things — handmade, retail, wholesale)</li>
+        <li>Both (services and products)</li>
+        <li>Something else — please describe</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q5</p>
+      <p class="q-block__question">Do you have an existing website?</p>
+      <ul class="q-options">
+        <li>No — starting fresh</li>
+        <li>Yes, but it needs replacing (what's the URL?)</li>
+        <li>Yes, and I want to keep parts of it (what works, what doesn't?)</li>
+      </ul>
+      <span class="q-field">URL or details if applicable</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q6</p>
+      <p class="q-block__question">Do you already have a domain name registered?</p>
+      <ul class="q-options">
+        <li>Yes — I own the domain (what is it?)</li>
+        <li>No — I need to buy one</li>
+        <li>I'm not sure what this means</li>
+      </ul>
+      <span class="q-field">Domain name if you have one</span>
+    </div>
+  </section>
+
+  <!-- ==================== 02 — WHAT YOU NEED ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>02 — What You Need</p>
+    <h2 data-reveal>Features and functionality.</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>Tick everything that applies. Don't worry if you're not sure about some — we'll talk through it. Everything listed below is included in either the Core Site or Full Site + AI package.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q7</p>
+      <p class="q-block__question">What pages does your site need?</p>
+      <p class="q-block__hint">Tick all that apply. I'll suggest anything I think is missing.</p>
+      <ul class="q-options">
+        <li class="q-check">Home page</li>
+        <li class="q-check">About / Our Story</li>
+        <li class="q-check">Services or Products page</li>
+        <li class="q-check">Contact page with form</li>
+        <li class="q-check">FAQ page</li>
+        <li class="q-check">Gallery / Portfolio</li>
+        <li class="q-check">Blog</li>
+        <li class="q-check">Pricing page</li>
+        <li class="q-check">Testimonials / Reviews</li>
+        <li class="q-check">Location / Map</li>
+        <li class="q-check">Booking / Availability</li>
+      </ul>
+      <span class="q-field">Any others not listed?</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q8</p>
+      <p class="q-block__question">Which package sounds right for you?</p>
+      <p class="q-block__hint">These are starting points — we'll refine based on your actual needs.</p>
+      <ul class="q-options">
+        <li><strong>Core Site ($1,500–$2,000 AUD)</strong> — Custom design, responsive, contact forms, SEO, blog, database, email notifications, full handover</li>
+        <li><strong>Full Site + AI ($2,500–$4,000 AUD)</strong> — Everything in Core, plus AI chat persona, AI content tools, full admin dashboard with inbox, analytics, and content writer</li>
+        <li>Not sure yet — let's discuss after you've seen my questions</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q9</p>
+      <p class="q-block__question">Do you need an admin dashboard?</p>
+      <p class="q-block__hint">A private control panel where you manage messages, content, reviews, and analytics — all in one place, any device.</p>
+      <ul class="q-options">
+        <li>Yes — I want to manage everything myself</li>
+        <li>Maybe — tell me more about what it does</li>
+        <li>No — I'd rather you handle updates for me</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 03 — AI FEATURES ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>03 — AI Features</p>
+    <h2 data-reveal>Smart tools that work for you 24/7.</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>All AI runs on Cloudflare Workers AI — no monthly AI fees, no ChatGPT subscription. It's trained on your business and speaks in your voice. These features are included in the Full Site + AI package.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q10</p>
+      <p class="q-block__question">Would you like an AI chatbot on your site?</p>
+      <p class="q-block__hint">A conversational assistant that knows your services, pricing, hours, and FAQs. Answers customer questions 24/7 in your voice — not a generic bot.</p>
+      <ul class="q-options">
+        <li>Yes — this sounds really useful</li>
+        <li>Maybe — I'd like to see how it works first</li>
+        <li>No — I don't think my customers would use it</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q11</p>
+      <p class="q-block__question">If yes — what should the chatbot know about?</p>
+      <p class="q-block__hint">Tick all that apply. The more it knows, the more useful it is.</p>
+      <ul class="q-options">
+        <li class="q-check">Your services and pricing</li>
+        <li class="q-check">Opening hours and location</li>
+        <li class="q-check">Product details and availability</li>
+        <li class="q-check">Booking and availability</li>
+        <li class="q-check">Local area information</li>
+        <li class="q-check">Frequently asked questions</li>
+        <li class="q-check">Shipping and delivery info</li>
+        <li class="q-check">Your story and background</li>
+      </ul>
+      <span class="q-field">Anything else the chatbot should know?</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q12</p>
+      <p class="q-block__question">What other AI tools would be useful?</p>
+      <p class="q-block__hint">Tick all that interest you.</p>
+      <ul class="q-options">
+        <li class="q-check">AI-suggested replies to customer enquiries (in your voice)</li>
+        <li class="q-check">AI blog post generator (drafts content for you to review)</li>
+        <li class="q-check">FAQ insights (see what customers actually ask)</li>
+        <li class="q-check">Analytics summaries in plain English</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 04 — E-COMMERCE ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>04 — E-Commerce</p>
+    <h2 data-reveal>Do you sell products online?</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>If you sell physical or digital products, I can add a full online store — product catalogue, cart, Stripe checkout, order management, and shipping calculator. This is an add-on (+$600–$1,200) to either package.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q13</p>
+      <p class="q-block__question">Do you need an online store?</p>
+      <ul class="q-options">
+        <li>Yes — I sell products and want people to buy directly on the site</li>
+        <li>Not yet, but maybe in the future</li>
+        <li>No — I only offer services</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q14</p>
+      <p class="q-block__question">If yes — how many products do you have?</p>
+      <ul class="q-options">
+        <li>Less than 10</li>
+        <li>10–50</li>
+        <li>50–200</li>
+        <li>200+ (we should talk about this)</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q15</p>
+      <p class="q-block__question">Do you ship internationally?</p>
+      <ul class="q-options">
+        <li>Australia only</li>
+        <li>Australia + New Zealand</li>
+        <li>Worldwide</li>
+        <li>No shipping — digital products or local pickup only</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q16</p>
+      <p class="q-block__question">Do you need a newsletter system?</p>
+      <p class="q-block__hint">Subscribe/unsubscribe, subscriber management, automated emails. Add-on: +$300–$500.</p>
+      <ul class="q-options">
+        <li>Yes — I want to build an email list</li>
+        <li>Maybe later</li>
+        <li>No</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 05 — DESIGN & BRAND ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>05 — Design &amp; Brand</p>
+    <h2 data-reveal>What should it look and feel like?</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>I design from scratch for every client — no templates. But I need to understand your taste and your brand's personality so the design feels right.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q17</p>
+      <p class="q-block__question">Do you have existing branding?</p>
+      <p class="q-block__hint">Logo, colours, fonts — anything that should carry over to the website.</p>
+      <ul class="q-options">
+        <li>Yes — I have a logo and brand colours</li>
+        <li>Partial — I have a logo but no defined colours or fonts</li>
+        <li>No — I need everything designed from scratch</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q18</p>
+      <p class="q-block__question">What vibe should your site have?</p>
+      <p class="q-block__hint">Pick the closest match, or describe your own.</p>
+      <ul class="q-options">
+        <li>Clean and minimal — lots of white space, simple, modern</li>
+        <li>Bold and energetic — strong colours, movement, impact</li>
+        <li>Warm and natural — earthy tones, organic feel, handcrafted</li>
+        <li>Professional and corporate — trust, authority, clean lines</li>
+        <li>Dark and premium — dark backgrounds, gold/silver accents, luxury feel</li>
+        <li>Something else entirely</li>
+      </ul>
+      <span class="q-field">Describe in your own words if none of these fit</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q19</p>
+      <p class="q-block__question">Are there any websites you like the look of?</p>
+      <p class="q-block__hint">Drop a couple of URLs. Doesn't have to be in your industry — just sites where you think "I like how that feels."</p>
+      <span class="q-field q-field--tall">URLs or descriptions</span>
+    </div>
+  </section>
+
+  <!-- ==================== 06 — CONTENT ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>06 — Content &amp; Images</p>
+    <h2 data-reveal>What have you got ready?</h2>
+    <hr class="accent-rule" data-reveal>
+    <p class="q-section-intro" data-reveal>I can work with whatever you have — professional photos, phone photos, written content, or nothing at all. Just helps to know what the starting point is.</p>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q20</p>
+      <p class="q-block__question">Do you have photos of your business, products, or services?</p>
+      <ul class="q-options">
+        <li>Yes — professional photos ready to go</li>
+        <li>Yes — phone photos (decent quality)</li>
+        <li>Some, but I'll need more taken</li>
+        <li>No — I need help sourcing images</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q21</p>
+      <p class="q-block__question">Do you have written content (about page, service descriptions, etc.)?</p>
+      <ul class="q-options">
+        <li>Yes — I'll provide written content for each page</li>
+        <li>Partially — I have some, need help with the rest</li>
+        <li>No — I'll need help writing everything</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 07 — TIMELINE & BUDGET ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>07 — Timeline &amp; Budget</p>
+    <h2 data-reveal>When do you need it and what can you spend?</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q22</p>
+      <p class="q-block__question">When do you need the site live?</p>
+      <ul class="q-options">
+        <li>As soon as possible</li>
+        <li>Within a month</li>
+        <li>Within 2–3 months</li>
+        <li>No rush — get it right</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q23</p>
+      <p class="q-block__question">What's your budget range?</p>
+      <p class="q-block__hint">Be honest — it helps me scope the right solution. All prices AUD.</p>
+      <ul class="q-options">
+        <li>$1,500–$2,000 (Core Site)</li>
+        <li>$2,500–$4,000 (Full Site + AI)</li>
+        <li>$4,000+ (Full Site + AI + E-Commerce + extras)</li>
+        <li>I'm not sure — help me figure out what makes sense</li>
+      </ul>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q24</p>
+      <p class="q-block__question">After launch, do you want ongoing maintenance?</p>
+      <p class="q-block__hint">Updates, backups, fixes, content changes. ~3 hrs/month. Or I can hand over everything and you're on your own.</p>
+      <ul class="q-options">
+        <li>Yes — I'd prefer someone handles the tech ($150–$250/mo)</li>
+        <li>Maybe — let me see how I go first</li>
+        <li>No — just hand it all over and I'll manage it</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 08 — ANYTHING ELSE ==================== -->
+  <section class="section">
+    <p class="section-label" data-reveal>08 — Anything Else</p>
+    <h2 data-reveal>What did I miss?</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q25</p>
+      <p class="q-block__question">Is there anything specific you want that wasn't covered above?</p>
+      <p class="q-block__hint">Special features, integrations with other services, specific ideas you've seen elsewhere — anything at all.</p>
+      <span class="q-field q-field--tall">Your answer here</span>
+    </div>
+
+    <div class="q-block" data-reveal>
+      <p class="q-block__number">Q26</p>
+      <p class="q-block__question">What's the single most important thing your website needs to do?</p>
+      <p class="q-block__hint">If it could only do one thing really well, what would that be?</p>
+      <span class="q-field q-field--tall">Your answer here</span>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="section">
+    <div class="cta-block" data-reveal-scale>
+      <p class="section-label">What Happens Next</p>
+      <h3>Send this back and I'll come back within 24 hours.</h3>
+      <div class="prose">
+        <p>Fill in what you can, skip what you can't. Even half-answered is enough to start a conversation. I'll follow up with a specific quote and a plan tailored to what you need.</p>
+      </div>
+      <p class="cta-block__email"><a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></p>
+      <p class="cta-block__byline">Marc Dinnerville &middot; Far North Queensland</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="doc-footer">
+    <span class="doc-footer__brand">Marc Dinnerville</span>
+    <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/nav.js"></script>
+
+</body>
+</html>

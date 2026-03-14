@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Let's Talk — Marc Dinnerville Portfolio</title>
+  <meta name="description" content="Start a project conversation. AI-powered intake system that builds your project brief in real-time.">
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- WebGL particle canvas -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+      <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+      <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+      <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+      <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+      <li><a href="contact.html" class="site-nav__link site-nav__link--active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ PAGE CONTENT ============ -->
+<div class="page-content">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <p class="section-label" data-letter-stagger>Portfolio &middot; AI Contact System</p>
+    <h1>Let's Talk</h1>
+    <p class="tagline">An AI-powered intake system that asks the right questions, builds a project brief in real-time, and shows how AI can be woven into product UX &mdash; not just bolted on as a chatbot.</p>
+    <p style="margin-top: 1.25rem; font-size: 1.05rem;">Or just email me directly: <a href="mailto:allgoodnow@mailfence.com" style="color: var(--gold); font-weight: 600;">allgoodnow@mailfence.com</a></p>
+    <hr class="accent-rule">
+
+    <div class="stats" data-stagger>
+      <div class="stat">
+        <span class="stat__number" data-count="4">0</span>
+        <span class="stat__label">Adaptive Paths</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">AI</span>
+        <span class="stat__label">Live Companion</span>
+      </div>
+      <div class="stat stat--highlight">
+        <span class="stat__number" data-count="2">0</span>
+        <span class="stat__label">Minutes</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number" data-count="0">$0</span>
+        <span class="stat__label">Cost to Try</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span class="scroll-hint__arrow"></span>
+    </div>
+  </header>
+
+</div>
+
+<!-- ============ MAIN LAYOUT ============ -->
+<div class="contact-layout">
+
+  <!-- WIZARD PANEL -->
+  <div class="wizard">
+    <div class="wizard__progress" id="wizard-progress" style="width: 0%"></div>
+    <div class="wizard__inner" id="wizard-container">
+      <!-- Questions are injected by contact.js -->
+    </div>
+    <div class="wizard__fallback">
+      <a href="questionnaire.html">Prefer to fill out a written questionnaire?</a>
+    </div>
+  </div>
+
+  <!-- COMPANION PANEL (desktop) -->
+  <div class="companion" id="companion">
+    <div class="companion__inner">
+      <div class="companion__header">
+        <div class="companion__title">AI Companion</div>
+        <div class="companion__status">
+          <span class="companion__status-dot"></span>
+          <span id="companion-status-text">Ready</span>
+        </div>
+      </div>
+      <div class="companion__messages" id="companion-messages">
+        <!-- Messages injected by JS -->
+      </div>
+      <div class="companion__brief" id="companion-brief" style="display: none;">
+        <div class="companion__brief-title">Project Brief</div>
+        <div class="companion__brief-items" id="brief-items">
+          <!-- Brief items injected by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MOBILE COMPANION -->
+<div class="companion-mobile" id="companion-mobile">
+  <div class="companion-mobile__bar" id="companion-mobile-bar">
+    <span class="companion-mobile__dot"></span>
+    <span class="companion-mobile__text" id="companion-mobile-text">Ready to help...</span>
+    <span class="companion-mobile__toggle">View</span>
+  </div>
+  <div class="companion-mobile__drawer" id="companion-mobile-drawer">
+    <div class="companion-mobile__drawer-handle"></div>
+    <div class="companion-mobile__drawer-content" id="companion-mobile-content">
+      <!-- Cloned companion content for mobile -->
+    </div>
+  </div>
+</div>
+
+<!-- CDN Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<!-- V2 Scripts -->
+<script src="js/effects.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/contact.js"></script>
+
+</body>
+</html>

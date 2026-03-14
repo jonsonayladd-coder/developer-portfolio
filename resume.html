@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Marc Dinnerville — Web Developer Portfolio 2026</title>
+  <meta name="description" content="Custom web platforms with integrated AI. Astro 5, Solid.js, Cloudflare, Workers AI. Marc Dinnerville — Far North Queensland.">
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="webgl-canvas"></canvas>
+
+<nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+  <div class="site-nav__inner">
+    <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+      <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+      <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+      <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+      <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+      <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-content">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <p class="section-label" data-letter-stagger>Web Developer &middot; Portfolio 2026</p>
+    <h1>Marc Dinnerville</h1>
+    <p class="tagline">Custom platforms with integrated AI</p>
+    <hr class="accent-rule">
+    <p class="contact-line">
+      <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a> &middot; Far North Queensland, Australia &middot; Available worldwide<br>
+      <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a>
+    </p>
+    <div class="tag-row">
+      <span class="tag">Astro 5</span>
+      <span class="tag">Solid.js</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Cloudflare Pages</span>
+      <span class="tag">Workers / D1</span>
+      <span class="tag">Workers AI</span>
+      <span class="tag">Stripe</span>
+      <span class="tag">Resend</span>
+      <span class="tag">GSAP</span>
+    </div>
+
+    <div class="stats" data-stagger>
+      <div class="stat">
+        <div class="stat__number" data-count="2">0</div>
+        <div class="stat__label">Live Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number" data-count="10" data-count-suffix="+">0</div>
+        <div class="stat__label">AI Tools Built</div>
+      </div>
+      <div class="stat stat--highlight">
+        <div class="stat__number">$0</div>
+        <div class="stat__label">Monthly Cost</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number" data-count="20" data-count-suffix="+">0</div>
+        <div class="stat__label">API Endpoints</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint"><span class="scroll-hint__arrow"></span></div>
+  </header>
+
+  <!-- ============ 01 — WHAT I BUILD ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>01 &mdash; What I Build</p>
+    <h2 data-reveal>Not websites. Platforms.</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="prose" data-reveal>
+      <p>I build custom web platforms &mdash; not template websites. Each project is a complete business system: a beautifully designed frontend that loads instantly anywhere in the world, a private admin dashboard built around your specific workflow, AI tools trained on your actual business data and voice, a serverless database, transactional email, full search engine optimisation, and if needed &mdash; a complete e-commerce system with payments, shipping, and order management.</p>
+
+      <p><strong>The technical foundation:</strong> Every site is built on Astro 5 with server-side rendering and selective hydration &mdash; meaning pages are pre-built on the server and arrive fully formed, while Solid.js islands handle interactive components without shipping unnecessary JavaScript. The entire stack deploys to Cloudflare's edge network across 300+ global points of presence. The database is Cloudflare D1 &mdash; serverless SQLite requiring zero maintenance. AI features run on Workers AI (Llama 3.1 8B) with per-tool system prompts, structured JSON output constraints, deterministic temperature settings, and a four-layer caching architecture resolving approximately 70% of all queries from cache at sub-50ms latency.</p>
+
+      <p>In plain English: your website runs on the same global infrastructure used by companies like Discord and Shopify &mdash; but configured so that hosting, database, AI, bot protection, and email all cost you nothing per month. The only ongoing expense is the domain name at roughly $15 per year.</p>
+    </div>
+
+    <div class="stats" data-stagger>
+      <div class="stat">
+        <div class="stat__number">&lt;1s</div>
+        <div class="stat__label">Page Load</div>
+        <div class="stat__compare">WP: 3&ndash;5s</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number" data-count="95" data-count-suffix="+">0</div>
+        <div class="stat__label">Mobile Score</div>
+        <div class="stat__compare">WP: 40&ndash;60</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">50ms</div>
+        <div class="stat__label">TTFB Edge</div>
+        <div class="stat__compare">WP: 500ms+</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number" data-count="300" data-count-suffix="+">0</div>
+        <div class="stat__label">Edge Locations</div>
+        <div class="stat__compare">WP: 1 server</div>
+      </div>
+      <div class="stat stat--highlight">
+        <div class="stat__number" data-count="70" data-count-suffix="%">0</div>
+        <div class="stat__label">AI Cache Hits</div>
+        <div class="stat__compare">&lt;50ms response</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">$0</div>
+        <div class="stat__label">Monthly Run</div>
+        <div class="stat__compare">WP: $75&ndash;160</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 — ARCHITECTURE ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>02 &mdash; Architecture</p>
+    <h2 data-reveal>How It All Fits Together</h2>
+    <hr class="accent-rule" data-reveal>
+    <p data-reveal>Every project uses the same proven, modern architecture. Here's what powers your site &mdash; and why each piece matters.</p>
+
+    <div class="table-wrap" data-reveal-scale>
+      <table>
+        <thead>
+          <tr><th>Layer</th><th>Technology</th><th>What It Does &amp; Why It Matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Frontend</td><td><strong>Astro 5, Solid.js, TypeScript</strong></td><td>Astro builds pages at the server so they arrive ready to display. Solid.js adds interactivity only where needed. TypeScript catches errors before they reach visitors.</td></tr>
+          <tr><td>Hosting</td><td><strong>Cloudflare Pages</strong></td><td>Served from 300+ locations worldwide. Zero-downtime deploys via Wrangler CLI. No origin server to maintain. Free.</td></tr>
+          <tr><td>Database</td><td><strong>Cloudflare D1</strong></td><td>Serverless SQLite at the edge. Stores enquiries, orders, blog posts, analytics &mdash; with parameterised queries preventing SQL injection.</td></tr>
+          <tr><td>AI Engine</td><td><strong>Workers AI (Llama 3.1 8B)</strong></td><td>Each tool gets its own system prompt with personality, boundaries, and structured output rules. Four-layer cache means ~70% answered instantly.</td></tr>
+          <tr><td>Payments</td><td><strong>Stripe Elements</strong></td><td>Card details tokenised in the browser, sent directly to Stripe &mdash; server never touches card data. PCI compliant by design.</td></tr>
+          <tr><td>Email</td><td><strong>Resend</strong></td><td>Enquiry notifications, order confirmations, newsletters. Double opt-in with tokenised one-click unsubscribe. 3,000/month free.</td></tr>
+          <tr><td>Security</td><td><strong>Turnstile, Workers</strong></td><td>Invisible bot protection, KV-backed rate limiting, timing-safe auth, CSRF tokens, honeypot spam traps, input sanitisation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Services</h3>
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>Full Website</h4>
+        <div class="card__text">Custom design, responsive, forms, SEO, blog, deployment + complete handover.</div>
+      </div>
+      <div class="card">
+        <h4>AI Integration</h4>
+        <div class="card__text">Custom chat persona, content generators, smart search, analytics summaries. No subscriptions.</div>
+      </div>
+      <div class="card">
+        <h4>E-Commerce</h4>
+        <div class="card__text">Product catalogue, Stripe checkout, shipping calculators, order management. No platform fees.</div>
+      </div>
+      <div class="card">
+        <h4>Admin Dashboard</h4>
+        <div class="card__text">Purpose-built for your workflow: inbox, content writer, review moderation, analytics.</div>
+      </div>
+      <div class="card">
+        <h4>Email &amp; Newsletter</h4>
+        <div class="card__text">Opt-in, one-click unsubscribe, subscriber management. Free via Resend.</div>
+      </div>
+      <div class="card">
+        <h4>Maintenance</h4>
+        <div class="card__text">Updates, backups, fixes. Fixed rate &mdash; or full handover and maintain it yourself.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 — PORTFOLIO ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>03 &mdash; Portfolio</p>
+    <h2 data-reveal>Production Work</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <!-- DTB -->
+    <div class="card" data-reveal-scale style="margin-bottom: 2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+        <span style="font-family:var(--font-display); font-size:1.3rem; color:var(--cream); font-weight:700;">Daintree Thai Boxing</span>
+        <span class="badge badge--live">Live</span>
+      </div>
+      <p class="card__text" style="margin-bottom:0.6rem;">
+        <a href="https://daintreethaiboxing.com" style="color:var(--gold);">daintreethaiboxing.com</a> &middot; Client: Kru Din, Daintree QLD &middot; Built in &lt;1 week
+      </p>
+      <p class="card__text">A complete web platform for a Muay Thai coaching business in the Daintree Rainforest. Premium editorial design &mdash; deep forest greens, warm gold accents, custom cursor, particle effects, atmospheric loading screen, dark/light mode. View Transitions API for fluid navigation.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>10 AI-Powered Tools &mdash; $0/month</h4>
+        <div class="card__text">Three chatbot personas (training assistant, nature guide, technique coach) with dedicated system prompts and domain boundaries. Seven generators for training plans, nutrition, warmups, recovery, technique, trips, smart FAQ. Time-aware greetings, proactive page triggers, individual conversation history.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Multi-Layer AI Security</h4>
+        <div class="card__text">Regex jailbreak detection, role-play prevention, input constraints. Outbound validation. KV-backed rate limiting (10/min), progressive slowdown, auto IP ban after 5+ violations, session tracking.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>6-Panel Admin + Smart Caching</h4>
+        <div class="card__text">Inbox with AI replies, review moderation, AI analytics summaries, content publishing, availability manager, FAQ pattern analysis. Four-layer cache (~70% hit rate, &lt;50ms cached vs ~800ms fresh).</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>SEO &amp; Structured Data</h4>
+        <div class="card__text">JSON-LD across 6+ schemas. Dynamic Open Graph + Twitter Cards per page. Geo meta. Auto sitemaps. Core Web Vitals &mdash; consistently 95+ mobile PageSpeed.</div>
+      </div>
+    </div>
+
+    <!-- S&P -->
+    <div class="card" data-reveal-scale style="margin-top:3rem; margin-bottom:2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+        <span style="font-family:var(--font-display); font-size:1.3rem; color:var(--cream); font-weight:700;">Stix &amp; Pebbles</span>
+        <span class="badge badge--live">Live</span>
+      </div>
+      <p class="card__text" style="margin-bottom:0.6rem;">
+        <a href="https://stixandpebbles.pages.dev" style="color:var(--gold);">stixandpebbles.pages.dev</a> &middot; Client: Melinda, Irvinebank QLD
+      </p>
+      <p class="card__text">Full e-commerce for handmade crafts &mdash; jewellery, ornaments, art from river stones, driftwood, creek crystals. Earth-tone design, dark/light mode, scroll animations, offline support via service worker.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Complete E-Commerce</h4>
+        <div class="card__text">Product catalogue with materials, weights, meanings, stock tracking. Persistent localStorage cart. Stripe Elements checkout with server-side validation. Admin order management. Custom commissions.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>AU Post Shipping Calculator</h4>
+        <div class="card__text">Weight-based from real rate tables. Cart weights + packaging &rarr; 5 zones (2 domestic, NZ, Asia-Pacific, rest-of-world). Base + per-kg international. No plugin, no API, no subscription.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>&ldquo;Mini Mel&rdquo; AI Shopping Assistant</h4>
+        <div class="card__text">Cart-aware chatbot. Knows every product and its story. Synonym recognition, seasonal suggestions, FAQ matching, voice consistency checks, proactive product-page triggers.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Newsletter &amp; Admin</h4>
+        <div class="card__text">Double opt-in, tokenised unsubscribe, subscriber admin. Full dashboard: inbox, analytics, content writer, order management.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — TECHNICAL SKILLS ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>04 &mdash; Technical Skills</p>
+    <h2 data-reveal>The Stack</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="cards" data-stagger>
+      <div class="card">
+        <h4>Languages &amp; Frameworks</h4>
+        <div class="card__text">TypeScript for all logic &mdash; errors caught at build time. Astro 5 SSR with selective hydration. Solid.js reactive UI &mdash; fine-grained reactivity, no virtual DOM, smaller bundles than React. HTML5, CSS3, fully responsive.</div>
+      </div>
+      <div class="card">
+        <h4>Cloudflare Platform</h4>
+        <div class="card__text">Pages (SSR edge functions), Workers (serverless, 300+ PoPs), D1 (serverless SQLite), Workers AI (Llama 3.1 8B), R2 (object storage), KV (rate limiting), Turnstile (bot protection). Wrangler CLI, zero-downtime deploys.</div>
+      </div>
+      <div class="card">
+        <h4>AI / ML Engineering</h4>
+        <div class="card__text">Custom system prompts with structured JSON output. Semantic caching via text embeddings. Proactive contextual triggers. Multi-layer abuse detection: regex, role-play prevention, progressive rate limiting, IP banning. AI analytics narratives. Multi-agent orchestration &mdash; running parallel Anthropic Claude sessions with custom skills, persistent memory, and MCP integrations for concurrent development workflows.</div>
+      </div>
+      <div class="card">
+        <h4>Backend &amp; APIs</h4>
+        <div class="card__text">20+ RESTful endpoints. KV-backed sliding window rate limiting. Timing-safe auth (constant-time comparison). Stripe tokenisation + server validation. Parameterised D1 queries. Resend templating.</div>
+      </div>
+      <div class="card">
+        <h4>Frontend &amp; Animation</h4>
+        <div class="card__text">GSAP + ScrollTrigger hardware-accelerated animations. Lenis smooth scroll. View Transitions API for SPA-like navigation. Full dark/light mode systems. Custom cursors, particle effects, loading sequences.</div>
+      </div>
+      <div class="card">
+        <h4>E-Commerce</h4>
+        <div class="card__text">Product catalogue + stock + weight tracking. Persistent localStorage cart. Stripe Elements PCI checkout. Weight-based shipping (5 zones, real carrier tables). Server-side order validation. Admin management.</div>
+      </div>
+    </div>
+
+    <div class="card" data-reveal-scale style="margin-top: 1.25rem;">
+      <h4>SEO &amp; Structured Data</h4>
+      <div class="card__text">JSON-LD across 6+ schemas (SportsActivityLocation, FAQPage, BreadcrumbList, Event, Product, Article, LocalBusiness). Dynamic Open Graph + Twitter Cards per page. Geo meta. Auto sitemaps. Core Web Vitals &mdash; consistently 95+ mobile PageSpeed.</div>
+    </div>
+  </section>
+
+  <!-- ============ 05 — THE ECONOMICS ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>05 &mdash; The Economics</p>
+    <h2 data-reveal>Running Costs Matter</h2>
+    <hr class="accent-rule" data-reveal>
+    <p data-reveal>Most agencies don't talk about what happens after launch. Here's the real comparison.</p>
+
+    <div class="table-wrap" data-reveal-scale>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>My Stack</th><th>WordPress</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Hosting</td><td><strong>Free &mdash; Cloudflare Pages</strong></td><td>$10&ndash;30/mo</td></tr>
+          <tr><td>Database</td><td><strong>Free &mdash; D1 (5GB, 5M reads/day)</strong></td><td>$10&ndash;20/mo</td></tr>
+          <tr><td>AI Features</td><td><strong>Free &mdash; Workers AI (10K req/day)</strong></td><td>$20&ndash;100+/mo</td></tr>
+          <tr><td>Bot Protection</td><td><strong>Free &mdash; Turnstile</strong></td><td>$10&ndash;30/mo</td></tr>
+          <tr><td>Email</td><td><strong>Free &mdash; Resend (3K/mo)</strong></td><td>$10&ndash;30/mo</td></tr>
+          <tr><td>Plugin Updates</td><td><strong>None &mdash; purpose-built code</strong></td><td>Monthly, breakage risk</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box" data-reveal-scale>
+      <div class="highlight-box__value">$1.25/mo vs $75&ndash;160/mo</div>
+      <div class="highlight-box__sub">My stack costs only the domain name. WordPress stacks cost $75&ndash;160/month before maintenance.</div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — HOW I WORK ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>06 &mdash; How I Work</p>
+    <h2 data-reveal>Direct. Fast. Yours.</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Direct Communication</h4>
+        <div class="card__text">You talk to the person who writes the code. No project managers, no subcontractors. Brief to handover &mdash; just me.</div>
+      </div>
+      <div class="card card--green-left">
+        <h4>Complete Ownership</h4>
+        <div class="card__text">Full source code, all credentials, admin access, plain-English guide. No vendor lock-in. Switch developers anytime.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Fast Delivery</h4>
+        <div class="card__text">Production-ready in under a week. Deep stack familiarity &mdash; battle-tested architecture, not cutting corners.</div>
+      </div>
+      <div class="card card--green-left">
+        <h4>Australia, Worldwide</h4>
+        <div class="card__text">Far North Queensland, AEST. Clear communication. Sites deployed globally regardless of your location.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block" data-reveal-scale>
+      <p class="section-label">Get In Touch</p>
+      <h3><a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></h3>
+      <p>
+        Marc Dinnerville &middot; Far North Queensland, Australia<br>
+        Portfolio: <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a><br>
+        Available for projects worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <span class="doc-footer__brand">Marc Dinnerville</span>
+    <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/nav.js"></script>
+
+</body>
+</html>
