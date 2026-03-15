@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Marc Dinnerville — Web Developer Portfolio 2026</title>
-  <meta name="description" content="Custom web platforms with integrated AI. Astro 5, Solid.js, Cloudflare, Workers AI. Marc Dinnerville — Far North Queensland.">
+  <title>Marc Dinnerville — Astro &amp; Cloudflare Developer · AI Integration · Portfolio 2026</title>
+  <meta name="description" content="Astro 6 + Cloudflare developer building fast, beautiful web platforms with integrated AI. Workers AI, Claude orchestration, edge-deployed. Marc Dinnerville — Far North Queensland.">
   <link rel="stylesheet" href="css/v2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,7 @@
       <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
       <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
       <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+      <li><a href="cognito-showcase.html" class="site-nav__link">Cognito</a></li>
       <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
       <li><a href="contact.html" class="site-nav__link">Contact</a></li>
     </ul>
@@ -40,14 +41,15 @@
   <header class="doc-header">
     <p class="section-label" data-letter-stagger>Web Developer &middot; Portfolio 2026</p>
     <h1>Marc Dinnerville</h1>
-    <p class="tagline">Custom platforms with integrated AI</p>
+    <p class="tagline">Astro &amp; Cloudflare platforms with integrated AI</p>
     <hr class="accent-rule">
     <p class="contact-line">
       <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a> &middot; Far North Queensland, Australia &middot; Available worldwide<br>
-      <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a>
+      <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a> &middot; <a href="https://cognito-demo.allgoodnow.workers.dev">cognito-demo</a><br>
+      <a href="https://github.com/jonsonayladd-coder/cognito-demo">github/cognito-demo</a> &middot; <a href="https://github.com/jonsonayladd-coder/developer-portfolio">github/developer-portfolio</a>
     </p>
     <div class="tag-row">
-      <span class="tag">Astro 5</span>
+      <span class="tag">Astro 6</span>
       <span class="tag">Solid.js</span>
       <span class="tag">TypeScript</span>
       <span class="tag">Cloudflare Pages</span>
@@ -60,7 +62,7 @@
 
     <div class="stats" data-stagger>
       <div class="stat">
-        <div class="stat__number" data-count="2">0</div>
+        <div class="stat__number" data-count="3">0</div>
         <div class="stat__label">Live Projects</div>
       </div>
       <div class="stat">
@@ -87,9 +89,9 @@
     <hr class="accent-rule" data-reveal>
 
     <div class="prose" data-reveal>
-      <p>I build custom web platforms &mdash; not template websites. Each project is a complete business system: a beautifully designed frontend that loads instantly anywhere in the world, a private admin dashboard built around your specific workflow, AI tools trained on your actual business data and voice, a serverless database, transactional email, full search engine optimisation, and if needed &mdash; a complete e-commerce system with payments, shipping, and order management.</p>
+      <p>I build fast, visually striking web platforms &mdash; not template websites. Every site is designed to look premium and load in under a second, anywhere in the world. Each project is a complete business system: a beautifully crafted frontend with cinematic scroll animations and polished interactions, a private admin dashboard built around your specific workflow, AI tools trained on your actual business data and voice, a serverless database, transactional email, full search engine optimisation, and if needed &mdash; a complete e-commerce system with payments, shipping, and order management.</p>
 
-      <p><strong>The technical foundation:</strong> Every site is built on Astro 5 with server-side rendering and selective hydration &mdash; meaning pages are pre-built on the server and arrive fully formed, while Solid.js islands handle interactive components without shipping unnecessary JavaScript. The entire stack deploys to Cloudflare's edge network across 300+ global points of presence. The database is Cloudflare D1 &mdash; serverless SQLite requiring zero maintenance. AI features run on Workers AI (Llama 3.1 8B) with per-tool system prompts, structured JSON output constraints, deterministic temperature settings, and a four-layer caching architecture resolving approximately 70% of all queries from cache at sub-50ms latency.</p>
+      <p><strong>The technical foundation:</strong> Every site is built on Astro 6 with server-side rendering and selective hydration &mdash; meaning pages are pre-built on the server and arrive fully formed, while Solid.js islands handle interactive components without shipping unnecessary JavaScript. The entire stack deploys to Cloudflare's edge network across 300+ global points of presence. The database is Cloudflare D1 &mdash; serverless SQLite requiring zero maintenance. AI features run on Workers AI (Llama 3.1 8B) with per-tool system prompts, structured JSON output constraints, deterministic temperature settings, and a four-layer caching architecture resolving approximately 70% of all queries from cache at sub-50ms latency.</p>
 
       <p>In plain English: your website runs on the same global infrastructure used by companies like Discord and Shopify &mdash; but configured so that hosting, database, AI, bot protection, and email all cost you nothing per month. The only ongoing expense is the domain name at roughly $15 per year.</p>
     </div>
@@ -141,10 +143,10 @@
           <tr><th>Layer</th><th>Technology</th><th>What It Does &amp; Why It Matters</th></tr>
         </thead>
         <tbody>
-          <tr><td>Frontend</td><td><strong>Astro 5, Solid.js, TypeScript</strong></td><td>Astro builds pages at the server so they arrive ready to display. Solid.js adds interactivity only where needed. TypeScript catches errors before they reach visitors.</td></tr>
+          <tr><td>Frontend</td><td><strong>Astro 6, Solid.js, TypeScript</strong></td><td>Astro builds pages at the server so they arrive ready to display. Solid.js adds interactivity only where needed. TypeScript catches errors before they reach visitors.</td></tr>
           <tr><td>Hosting</td><td><strong>Cloudflare Pages</strong></td><td>Served from 300+ locations worldwide. Zero-downtime deploys via Wrangler CLI. No origin server to maintain. Free.</td></tr>
           <tr><td>Database</td><td><strong>Cloudflare D1</strong></td><td>Serverless SQLite at the edge. Stores enquiries, orders, blog posts, analytics &mdash; with parameterised queries preventing SQL injection.</td></tr>
-          <tr><td>AI Engine</td><td><strong>Workers AI (Llama 3.1 8B)</strong></td><td>Each tool gets its own system prompt with personality, boundaries, and structured output rules. Four-layer cache means ~70% answered instantly.</td></tr>
+          <tr><td>AI Engine</td><td><strong>Workers AI (Llama 3.1, Qwen 3)</strong></td><td>Multiple models per use case. Per-tool system prompts with personality, boundaries, and structured output. Adversarial-hardened against prompt injection. FAQ pre-matching, lead capture, session persistence. Four-layer cache means ~70% answered instantly.</td></tr>
           <tr><td>Payments</td><td><strong>Stripe Elements</strong></td><td>Card details tokenised in the browser, sent directly to Stripe &mdash; server never touches card data. PCI compliant by design.</td></tr>
           <tr><td>Email</td><td><strong>Resend</strong></td><td>Enquiry notifications, order confirmations, newsletters. Double opt-in with tokenised one-click unsubscribe. 3,000/month free.</td></tr>
           <tr><td>Security</td><td><strong>Turnstile, Workers</strong></td><td>Invisible bot protection, KV-backed rate limiting, timing-safe auth, CSRF tokens, honeypot spam traps, input sanitisation.</td></tr>
@@ -250,6 +252,37 @@
     </div>
   </section>
 
+    <!-- Cognito Demo -->
+    <div class="card" data-reveal-scale style="margin-top:3rem; margin-bottom:2.5rem;">
+      <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+        <span style="font-family:var(--font-display); font-size:1.3rem; color:var(--cream); font-weight:700;">Cognito &mdash; AI Demo Site</span>
+        <span class="badge badge--live">Live</span>
+      </div>
+      <p class="card__text" style="margin-bottom:0.6rem;">
+        <a href="https://cognito-demo.allgoodnow.workers.dev" style="color:var(--gold);">cognito-demo.allgoodnow.workers.dev</a> &middot; Client-facing demo &middot; Cloudflare Worker
+      </p>
+      <p class="card__text">A production-ready template site showcasing what an AI-integrated business website looks like. Built with Astro 6 and deployed as a Cloudflare Worker &mdash; demonstrating a different deployment model from Pages-based sites.</p>
+    </div>
+
+    <div class="cards" data-stagger>
+      <div class="card card--gold-left">
+        <h4>Qwen 3 30B Chatbot &mdash; Adversarial Hardened</h4>
+        <div class="card__text">Production chatbot running Qwen 3 30B A3B on Workers AI. System prompt hardened against prompt extraction, persona hijacking, jailbreaks, and social engineering. Thinking token stripping for clean output. Temperature-tuned for consistent, on-brand responses.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Zero-Token FAQ &amp; Lead Capture</h4>
+        <div class="card__text">FAQ pre-matching answers common questions instantly without an AI call. Intent detection recognises when a visitor is ready to start a project and stores the conversation in KV for follow-up. Per-IP rate limiting via KV with graceful throttling.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>AI Concierge &amp; Inline Demo</h4>
+        <div class="card__text">Hero-level AI concierge greets visitors with typewriter effect and contextual quick-action buttons. Inline AI demo section lets visitors test the chatbot without leaving the homepage. Smart FAQ with custom question input.</div>
+      </div>
+      <div class="card card--gold-left">
+        <h4>Session Persistence &amp; Security</h4>
+        <div class="card__text">Conversation history persists via sessionStorage across page reloads. KV-backed rate limiting (20 req/min per IP). Input sanitisation and message length constraints. Graceful fallback responses on AI failure.</div>
+      </div>
+    </div>
+
   <!-- ============ 04 — TECHNICAL SKILLS ============ -->
   <section class="section">
     <p class="section-label" data-letter-stagger>04 &mdash; Technical Skills</p>
@@ -258,24 +291,24 @@
 
     <div class="cards" data-stagger>
       <div class="card">
-        <h4>Languages &amp; Frameworks</h4>
-        <div class="card__text">TypeScript for all logic &mdash; errors caught at build time. Astro 5 SSR with selective hydration. Solid.js reactive UI &mdash; fine-grained reactivity, no virtual DOM, smaller bundles than React. HTML5, CSS3, fully responsive.</div>
+        <h4>Astro 6 &amp; Solid.js</h4>
+        <div class="card__text">Astro 6 SSR with selective hydration &mdash; pages pre-rendered on the server, interactive islands hydrated only where needed. Solid.js for reactive UI: fine-grained reactivity, no virtual DOM, smaller bundles than React. TypeScript across the full stack. Result: sites that score 95+ on PageSpeed and feel instant.</div>
       </div>
       <div class="card">
-        <h4>Cloudflare Platform</h4>
-        <div class="card__text">Pages (SSR edge functions), Workers (serverless, 300+ PoPs), D1 (serverless SQLite), Workers AI (Llama 3.1 8B), R2 (object storage), KV (rate limiting), Turnstile (bot protection). Wrangler CLI, zero-downtime deploys.</div>
+        <h4>Cloudflare &mdash; Full Platform</h4>
+        <div class="card__text">Deep experience across the Cloudflare ecosystem: Pages (SSR edge functions), Workers (serverless compute, 300+ PoPs), D1 (serverless SQLite), Workers AI (Llama 3.1, Qwen 3), R2 (object storage), KV (rate limiting &amp; session state), Turnstile (bot protection). Wrangler CLI for zero-downtime deploys. Every project in this portfolio runs entirely on Cloudflare.</div>
       </div>
       <div class="card">
         <h4>AI / ML Engineering</h4>
-        <div class="card__text">Custom system prompts with structured JSON output. Semantic caching via text embeddings. Proactive contextual triggers. Multi-layer abuse detection: regex, role-play prevention, progressive rate limiting, IP banning. AI analytics narratives. Multi-agent orchestration &mdash; running parallel Anthropic Claude sessions with custom skills, persistent memory, and MCP integrations for concurrent development workflows.</div>
+        <div class="card__text">Custom system prompts with structured JSON output. Multiple model selection per use case (Llama 3.1 8B, Qwen 3 30B). Adversarial chatbot testing &mdash; prompt injection, persona hijacking, jailbreak, boundary probing &mdash; with hardened system prompts. FAQ pre-matching for zero-token instant responses. Lead intent detection and KV-backed capture. Session persistence. Semantic caching via text embeddings. Proactive contextual triggers. Multi-layer abuse detection: regex, role-play prevention, progressive rate limiting, IP banning. AI analytics narratives.</div>
       </div>
       <div class="card">
         <h4>Backend &amp; APIs</h4>
         <div class="card__text">20+ RESTful endpoints. KV-backed sliding window rate limiting. Timing-safe auth (constant-time comparison). Stripe tokenisation + server validation. Parameterised D1 queries. Resend templating.</div>
       </div>
       <div class="card">
-        <h4>Frontend &amp; Animation</h4>
-        <div class="card__text">GSAP + ScrollTrigger hardware-accelerated animations. Lenis smooth scroll. View Transitions API for SPA-like navigation. Full dark/light mode systems. Custom cursors, particle effects, loading sequences.</div>
+        <h4>Design &amp; Performance</h4>
+        <div class="card__text">Sites that look premium and load fast. GSAP + ScrollTrigger cinematic scroll animations. Lenis smooth scroll. WebGL particle systems. View Transitions API for SPA-like page navigation. Full dark/light mode. Custom cursors, atmospheric loaders, parallax. Every site scores 95+ mobile PageSpeed &mdash; because beautiful and fast aren't trade-offs.</div>
       </div>
       <div class="card">
         <h4>E-Commerce</h4>
@@ -286,6 +319,35 @@
     <div class="card" data-reveal-scale style="margin-top: 1.25rem;">
       <h4>SEO &amp; Structured Data</h4>
       <div class="card__text">JSON-LD across 6+ schemas (SportsActivityLocation, FAQPage, BreadcrumbList, Event, Product, Article, LocalBusiness). Dynamic Open Graph + Twitter Cards per page. Geo meta. Auto sitemaps. Core Web Vitals &mdash; consistently 95+ mobile PageSpeed.</div>
+    </div>
+  </section>
+
+  <!-- ============ AI-ASSISTED DEVELOPMENT ============ -->
+  <section class="section">
+    <p class="section-label" data-letter-stagger>How I Work With AI</p>
+    <h2 data-reveal>AI-Assisted Development</h2>
+    <hr class="accent-rule" data-reveal>
+
+    <div class="neural-card" id="neural-card" data-reveal-scale>
+      <canvas class="neural-card__canvas" id="neural-canvas"></canvas>
+      <div class="neural-card__content">
+        <div class="neural-card__badge">Anthropic Claude</div>
+
+        <p class="neural-card__lead">My development workflow is built around Anthropic's Claude models. Not as a novelty &mdash; as core infrastructure. I've spent months customising Claude Code with purpose-built instruction files, skills, hooks, and MCP server integrations that turn it into a tailored development environment. The result: I ship faster, catch more issues, and handle complexity that would normally require a larger team.</p>
+
+        <ul class="neural-card__list">
+          <li><strong>Concurrent multi-agent sessions</strong> &mdash; parallel feature development, testing, and research running simultaneously across isolated workstreams</li>
+          <li><strong>Custom instruction files</strong> &mdash; structured CLAUDE.md files that shape AI behaviour, enforce project conventions, and maintain context across sessions</li>
+          <li><strong>Purpose-built skills &amp; automation</strong> &mdash; deployment pipelines, diagnostic tools, code review workflows, database management, security auditing</li>
+          <li><strong>MCP server integrations</strong> &mdash; Claude connected to Cloudflare APIs, Playwright browser automation, documentation servers, and live verification tools</li>
+          <li><strong>Adversarial prompt engineering</strong> &mdash; testing and hardening production AI chatbots against injection, jailbreaks, persona hijacking, and social engineering</li>
+          <li><strong>Actively developing</strong> &mdash; each project teaches new patterns. The workflows, skills, and integrations I build compound &mdash; every client benefits from what came before</li>
+        </ul>
+
+        <div class="neural-card__footer">
+          <span class="neural-card__tech">Anthropic Claude &middot; Claude Code &middot; MCP Protocol &middot; Multi-Agent Orchestration</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -349,7 +411,8 @@
       <h3><a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></h3>
       <p>
         Marc Dinnerville &middot; Far North Queensland, Australia<br>
-        Portfolio: <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a><br>
+        Portfolio: <a href="https://daintreethaiboxing.com">daintreethaiboxing.com</a> &middot; <a href="https://stixandpebbles.pages.dev">stixandpebbles.pages.dev</a> &middot; <a href="https://cognito-demo.allgoodnow.workers.dev">cognito-demo</a><br>
+        GitHub: <a href="https://github.com/jonsonayladd-coder/cognito-demo">cognito-demo</a> &middot; <a href="https://github.com/jonsonayladd-coder/developer-portfolio">developer-portfolio</a><br>
         Available for projects worldwide.
       </p>
     </div>
@@ -369,6 +432,7 @@
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="js/effects.js"></script>
 <script src="js/nav.js"></script>
+<script src="js/chat.js"></script>
 
 </body>
 </html>

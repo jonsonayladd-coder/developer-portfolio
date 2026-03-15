@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Cognito — Portfolio Showcase | Marc Dinnerville</title>
+  <meta name="description" content="An AI-powered client-theme platform built with Astro 6, Cloudflare Workers AI, and conversational chatbots. Websites that think. Conversations that build.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+  <style>
+    /* ============================================
+       COGNITO SHOWCASE — Page-Specific Styles
+       ============================================ */
+
+    /* --- Rift Plasma Border (CSS Houdini) --- */
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* --- Escaped Background Text --- */
+    .escaped-text {
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 15vw, 12rem);
+      font-weight: 700;
+      color: rgba(200, 149, 42, 0.03);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      line-height: 1;
+    }
+    .escaped-text--edge {
+      top: 30vh;
+      left: -5%;
+      transform: rotate(-3deg);
+    }
+    .escaped-text--artificial {
+      top: 110vh;
+      right: -10%;
+      transform: rotate(2deg);
+    }
+    .escaped-text--intelligence {
+      top: 220vh;
+      left: -8%;
+      transform: rotate(-1.5deg);
+    }
+
+    /* --- Hero Split Screen --- */
+    .cognito-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(6rem, 12vw, 9rem) 0 clamp(3rem, 6vw, 5rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Rift plasma border panel */
+    .hero-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 3rem 2rem;
+    }
+
+    .hero-left__frame {
+      position: relative;
+      padding: 3rem 2.5rem;
+      background: rgba(26, 21, 16, 0.5);
+      border-radius: 8px;
+    }
+
+    .hero-left__frame::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 10px;
+      background: conic-gradient(from var(--border-angle), var(--gold), rgba(200,149,42,0.2), var(--gold-bright), rgba(200,149,42,0.1), var(--gold));
+      z-index: -1;
+      animation: riftRotate 3s linear infinite;
+    }
+
+    .hero-left__frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: rgba(26, 21, 16, 0.95);
+      z-index: -1;
+    }
+
+    @keyframes riftRotate {
+      to { --border-angle: 360deg; }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 0.15em;
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(200,149,42,0.3);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--cream);
+      line-height: 1.4;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hero-links a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      transition: color var(--transition-fast);
+    }
+    .hero-links a:hover { color: var(--gold-bright); }
+
+    .hero-links__label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--cream-faint);
+      font-family: var(--font-body);
+      margin-bottom: -0.3rem;
+    }
+
+    /* --- 3D Rotating Cube --- */
+    .cube-scene {
+      width: 160px;
+      height: 160px;
+      perspective: 600px;
+      margin: 1rem 0;
+    }
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: cubeRotate 12s linear infinite;
+    }
+    .cube__face {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--cream);
+      background: rgba(26, 21, 16, 0.8);
+      border: 1px solid var(--border-card);
+      padding: 1rem;
+      text-align: center;
+      line-height: 1.5;
+      backface-visibility: visible;
+    }
+    .cube__face--front  { transform: rotateY(0deg) translateZ(80px); }
+    .cube__face--right  { transform: rotateY(90deg) translateZ(80px); }
+    .cube__face--back   { transform: rotateY(180deg) translateZ(80px); }
+    .cube__face--left   { transform: rotateY(-90deg) translateZ(80px); }
+
+    @keyframes cubeRotate {
+      0%   { transform: rotateX(-10deg) rotateY(0deg); }
+      100% { transform: rotateX(-10deg) rotateY(360deg); }
+    }
+
+    /* --- Hero Stats Row --- */
+    .hero-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat__number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .hero-stat__label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+    }
+
+    /* --- Inferno Embers (Hero) --- */
+    .embers {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .ember {
+      position: absolute;
+      bottom: -10px;
+      width: 3px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0;
+      animation: emberRise 3s ease-out infinite;
+    }
+    .ember:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 2.8s; }
+    .ember:nth-child(2) { left: 25%; animation-delay: 0.5s; animation-duration: 3.2s; }
+    .ember:nth-child(3) { left: 40%; animation-delay: 1s; animation-duration: 2.6s; }
+    .ember:nth-child(4) { left: 55%; animation-delay: 0.3s; animation-duration: 3.5s; }
+    .ember:nth-child(5) { left: 70%; animation-delay: 0.8s; animation-duration: 2.9s; }
+    .ember:nth-child(6) { left: 85%; animation-delay: 1.2s; animation-duration: 3.1s; }
+    .ember:nth-child(7) { left: 15%; animation-delay: 1.5s; animation-duration: 2.7s; }
+    .ember:nth-child(8) { left: 60%; animation-delay: 0.7s; animation-duration: 3.3s; }
+    .ember:nth-child(9) { left: 45%; animation-delay: 1.8s; animation-duration: 2.5s; }
+    .ember:nth-child(10) { left: 80%; animation-delay: 0.2s; animation-duration: 3.0s; }
+
+    @keyframes emberRise {
+      0%   { transform: translateY(0) scale(1); opacity: 0; }
+      10%  { opacity: 0.8; }
+      50%  { opacity: 0.5; }
+      100% { transform: translateY(-200px) scale(0.3) translateX(20px); opacity: 0; }
+    }
+
+    /* --- Section 2: 3D Tech Prisms --- */
+    .prisms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      perspective: 800px;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+
+    .prism-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prism-scene {
+      width: 140px;
+      height: 140px;
+      perspective: 500px;
+      cursor: pointer;
+    }
+
+    .prism {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s var(--ease-out-expo);
+    }
+
+    .prism--spin-1 { animation: prismSpin1 8s linear infinite; }
+    .prism--spin-2 { animation: prismSpin2 10s linear infinite; }
+    .prism--spin-3 { animation: prismSpin3 9s linear infinite; }
+    .prism--spin-4 { animation: prismSpin1 11s linear infinite; }
+    .prism--spin-5 { animation: prismSpin2 7s linear infinite; }
+    .prism--spin-6 { animation: prismSpin3 12s linear infinite; }
+
+    @keyframes prismSpin1 {
+      0%   { transform: rotateX(-15deg) rotateY(0deg); }
+      100% { transform: rotateX(-15deg) rotateY(360deg); }
+    }
+    @keyframes prismSpin2 {
+      0%   { transform: rotateX(10deg) rotateY(0deg); }
+      100% { transform: rotateX(10deg) rotateY(-360deg); }
+    }
+    @keyframes prismSpin3 {
+      0%   { transform: rotateX(-5deg) rotateY(0deg) rotateZ(5deg); }
+      100% { transform: rotateX(-5deg) rotateY(360deg) rotateZ(5deg); }
+    }
+
+    .prism-scene:hover .prism {
+      animation-play-state: paused !important;
+      transform: rotateX(0deg) rotateY(0deg) scale(1.15);
+    }
+    .prism-scene:hover .prism__face {
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(200,149,42,0.3), inset 0 0 15px rgba(200,149,42,0.1);
+    }
+
+    .prism__face {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26, 21, 16, 0.85);
+      border: 1px solid var(--border-card);
+      padding: 1rem;
+      text-align: center;
+      backface-visibility: visible;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    .prism__face--front  { transform: rotateY(0deg) translateZ(70px); }
+    .prism__face--right  { transform: rotateY(90deg) translateZ(70px); }
+    .prism__face--back   { transform: rotateY(180deg) translateZ(70px); }
+    .prism__face--left   { transform: rotateY(-90deg) translateZ(70px); }
+
+    .prism__name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .prism__desc {
+      font-size: 0.6rem;
+      color: var(--cream-faint);
+      line-height: 1.4;
+    }
+
+    /* --- Section 3: Interactive Q&A --- */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .qa-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      padding: 1.2rem;
+      cursor: pointer;
+      text-align: left;
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s var(--ease-out-expo);
+      position: relative;
+      overflow: hidden;
+    }
+    .qa-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(200,149,42,0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .qa-btn:hover::before { opacity: 1; }
+    .qa-btn:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(200,149,42,0.15);
+    }
+    .qa-btn--active {
+      border-color: var(--gold) !important;
+      background: rgba(200,149,42,0.08);
+    }
+
+    .qa-btn__icon {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .qa-answer {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      background: rgba(26, 21, 16, 0.6);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      display: none;
+    }
+    .qa-answer--visible { display: block; }
+
+    /* Rift border on answer panel */
+    .qa-answer::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 10px;
+      background: conic-gradient(from var(--border-angle), var(--gold-dim), rgba(200,149,42,0.05), var(--gold-dim), rgba(200,149,42,0.02), var(--gold-dim));
+      z-index: -1;
+      animation: riftRotate 4s linear infinite;
+    }
+    .qa-answer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: rgba(26, 21, 16, 0.95);
+      z-index: -1;
+    }
+
+    .qa-answer__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .qa-answer__text {
+      color: var(--text-body);
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+
+    /* --- Section 4: Workflow Cards (Broken Grid) --- */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 3rem;
+      margin: 2rem 0;
+    }
+
+    .workflow-card {
+      position: relative;
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      transition: all 0.4s var(--ease-out-expo);
+      /* 7-layer deep shadow */
+      box-shadow:
+        0 1px 2px rgba(0,0,0,0.15),
+        0 2px 4px rgba(0,0,0,0.12),
+        0 4px 8px rgba(0,0,0,0.10),
+        0 8px 16px rgba(0,0,0,0.08),
+        0 16px 32px rgba(0,0,0,0.06),
+        0 24px 48px rgba(0,0,0,0.04),
+        0 32px 64px rgba(0,0,0,0.03);
+    }
+
+    /* Broken grid offset */
+    .workflow-card:nth-child(2) { margin-top: 4rem; }
+    .workflow-card:nth-child(3) { margin-top: -2rem; }
+    .workflow-card:nth-child(4) { margin-top: 2rem; }
+
+    .workflow-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow:
+        0 1px 2px rgba(0,0,0,0.15),
+        0 2px 4px rgba(0,0,0,0.12),
+        0 4px 8px rgba(0,0,0,0.10),
+        0 8px 16px rgba(0,0,0,0.08),
+        0 16px 32px rgba(0,0,0,0.06),
+        0 24px 48px rgba(0,0,0,0.04),
+        0 32px 64px rgba(0,0,0,0.03),
+        0 0 30px rgba(200,149,42,0.15);
+    }
+
+    .workflow-card__step {
+      position: absolute;
+      top: -0.5rem;
+      right: 1rem;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(200, 149, 42, 0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .workflow-card__title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .workflow-card__text {
+      color: var(--text-body);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    /* --- Section 5: Closing 3D Text --- */
+    .closing-section {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .closing-wrap {
+      text-align: center;
+      transform-style: preserve-3d;
+    }
+
+    .closing-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+      color: var(--cream);
+      line-height: 1.6;
+      font-weight: 400;
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+
+    .closing-text::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse at center, rgba(200,149,42,0.12), transparent 70%);
+      filter: blur(20px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .closing-footer {
+      font-size: 0.75rem;
+      color: var(--cream-faint);
+      letter-spacing: 0.1em;
+    }
+    .closing-footer strong {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .cognito-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 7rem;
+      }
+      .hero-title {
+        writing-mode: horizontal-tb;
+        font-size: clamp(2.5rem, 12vw, 4rem);
+      }
+      .hero-left {
+        justify-content: flex-start;
+      }
+      .prisms-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .prism-scene {
+        width: 120px;
+        height: 120px;
+      }
+      .prism__face {
+        width: 120px;
+        height: 120px;
+      }
+      .prism__face--front  { transform: rotateY(0deg) translateZ(60px); }
+      .prism__face--right  { transform: rotateY(90deg) translateZ(60px); }
+      .prism__face--back   { transform: rotateY(180deg) translateZ(60px); }
+      .prism__face--left   { transform: rotateY(-90deg) translateZ(60px); }
+      .qa-grid {
+        grid-template-columns: 1fr;
+      }
+      .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .workflow-card:nth-child(2),
+      .workflow-card:nth-child(3),
+      .workflow-card:nth-child(4) {
+        margin-top: 0;
+      }
+      .cube-scene {
+        width: 120px;
+        height: 120px;
+      }
+      .cube__face {
+        width: 120px;
+        height: 120px;
+      }
+      .cube__face--front  { transform: rotateY(0deg) translateZ(60px); }
+      .cube__face--right  { transform: rotateY(90deg) translateZ(60px); }
+      .cube__face--back   { transform: rotateY(180deg) translateZ(60px); }
+      .cube__face--left   { transform: rotateY(-90deg) translateZ(60px); }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Escaped background text -->
+  <span class="escaped-text escaped-text--edge">EDGE</span>
+  <span class="escaped-text escaped-text--artificial">ARTIFICIAL</span>
+  <span class="escaped-text escaped-text--intelligence">INTELLIGENCE</span>
+
+  <nav class="site-nav" role="navigation" aria-label="Portfolio navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__brand">MARC DINNERVILLE</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="resume.html" class="site-nav__link">Resume</a></li>
+        <li><a href="client-guide.html" class="site-nav__link">Client Guide</a></li>
+        <li><a href="dtb-showcase.html" class="site-nav__link">DTB</a></li>
+        <li><a href="stix-pebbles-showcase.html" class="site-nav__link">S&amp;P</a></li>
+        <li><a href="cognito-showcase.html" class="site-nav__link site-nav__link--active">Cognito</a></li>
+        <li><a href="skillset.html" class="site-nav__link">Skills</a></li>
+        <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- ==================== SECTION 1: HERO ==================== -->
+    <section class="cognito-hero">
+
+      <div class="hero-left" data-reveal>
+        <div class="hero-left__frame">
+          <h1 class="hero-title" data-letter-stagger>COGNITO</h1>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <p class="hero-tagline" data-reveal>Websites that think.<br>Conversations that build.</p>
+
+        <div class="hero-links" data-reveal>
+          <span class="hero-links__label">Live Site</span>
+          <a href="https://cognito-demo.allgoodnow.workers.dev" target="_blank">cognito-demo.allgoodnow.workers.dev</a>
+          <span class="hero-links__label" style="margin-top: 0.5rem;">GitHub</span>
+          <a href="https://github.com/jonsonayladd-coder/cognito-demo" target="_blank">github.com/jonsonayladd-coder/cognito-demo</a>
+        </div>
+
+        <div class="cube-scene" data-reveal>
+          <div class="cube">
+            <div class="cube__face cube__face--front">AI Chatbots<br><small style="color:var(--gold);">Qwen 2.5 7B</small></div>
+            <div class="cube__face cube__face--right">Astro 6<br><small style="color:var(--gold);">SSR + Islands</small></div>
+            <div class="cube__face cube__face--back">Edge Deploy<br><small style="color:var(--gold);">300+ Locations</small></div>
+            <div class="cube__face cube__face--left">Cloudflare<br><small style="color:var(--gold);">Pages + Workers</small></div>
+          </div>
+        </div>
+
+        <div class="hero-stats" data-stagger>
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="6">6</span>
+            <span class="hero-stat__label">Technologies</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="3">3</span>
+            <span class="hero-stat__label">Chatbot Personas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="300">300+</span>
+            <span class="hero-stat__label">Edge Cities</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat__number">$0</span>
+            <span class="hero-stat__label">Monthly Cost</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inferno embers -->
+      <div class="embers">
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div><div class="ember"></div><div class="ember"></div>
+        <div class="ember"></div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint__text">Scroll</span>
+        <span class="scroll-hint__line"></span>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: THE STACK ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>The Stack</p>
+      <h2 data-reveal>Six technologies. Zero monthly cost. Infinite edge.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Every layer chosen to keep costs at zero while delivering sub-second load times worldwide. The AI runs on Cloudflare's free tier — no OpenAI bills, no third-party dependencies.</p>
+      </div>
+
+      <div class="prisms-grid" data-stagger>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-1">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">Astro 6</span>
+                <span class="prism__desc">Server-rendered pages. Zero JS by default.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">Astro 6</span>
+                <span class="prism__desc">Island architecture for interactive components.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">Astro 6</span>
+                <span class="prism__desc">SSR on Cloudflare Pages.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">Astro 6</span>
+                <span class="prism__desc">Built for speed and SEO.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-2">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">CF Pages</span>
+                <span class="prism__desc">Global CDN. Free tier hosting.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">CF Pages</span>
+                <span class="prism__desc">300+ edge locations worldwide.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">CF Pages</span>
+                <span class="prism__desc">Auto SSL. Custom domains.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">CF Pages</span>
+                <span class="prism__desc">Git-based or Wrangler deploy.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-3">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">Workers AI</span>
+                <span class="prism__desc">Qwen 2.5 7B model. Edge inference.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">Workers AI</span>
+                <span class="prism__desc">10K requests/day free.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">Workers AI</span>
+                <span class="prism__desc">No API keys. No monthly fees.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">Workers AI</span>
+                <span class="prism__desc">Powers all chatbot personas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-4">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">D1 SQLite</span>
+                <span class="prism__desc">Serverless database at the edge.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">D1 SQLite</span>
+                <span class="prism__desc">Zero maintenance. Auto-replicated.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">D1 SQLite</span>
+                <span class="prism__desc">Chat history, sessions, analytics.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">D1 SQLite</span>
+                <span class="prism__desc">Full SQL. No connection pooling.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-5">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">Turnstile</span>
+                <span class="prism__desc">Invisible bot protection.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">Turnstile</span>
+                <span class="prism__desc">No CAPTCHAs. Zero friction.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">Turnstile</span>
+                <span class="prism__desc">Guards all public forms.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">Turnstile</span>
+                <span class="prism__desc">Free tier. Unlimited verifications.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prism-wrap">
+          <div class="prism-scene" data-tilt>
+            <div class="prism prism--spin-6">
+              <div class="prism__face prism__face--front">
+                <span class="prism__name">Solid.js</span>
+                <span class="prism__desc">Fine-grained reactivity.</span>
+              </div>
+              <div class="prism__face prism__face--right">
+                <span class="prism__name">Solid.js</span>
+                <span class="prism__desc">No virtual DOM. Real DOM updates.</span>
+              </div>
+              <div class="prism__face prism__face--back">
+                <span class="prism__name">Solid.js</span>
+                <span class="prism__desc">Powers chat interfaces.</span>
+              </div>
+              <div class="prism__face prism__face--left">
+                <span class="prism__name">Solid.js</span>
+                <span class="prism__desc">Astro island hydration.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: INTERACTIVE Q&A ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>Ask About Cognito</p>
+      <h2 data-reveal>Click a topic. Get the answer.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>This is what the site does — answers questions through conversation. Here's a taste of how it works, right on this page.</p>
+      </div>
+
+      <div class="qa-grid" data-stagger>
+        <button class="qa-btn" data-qa="chatbots" data-tilt>
+          <span class="qa-btn__icon">&#x1F916;</span>
+          How do the chatbots work?
+        </button>
+        <button class="qa-btn" data-qa="custom" data-tilt>
+          <span class="qa-btn__icon">&#x1F3A8;</span>
+          How is each site customised?
+        </button>
+        <button class="qa-btn" data-qa="model" data-tilt>
+          <span class="qa-btn__icon">&#x1F9E0;</span>
+          What AI model powers this?
+        </button>
+        <button class="qa-btn" data-qa="effects" data-tilt>
+          <span class="qa-btn__icon">&#x2728;</span>
+          What about the special effects?
+        </button>
+      </div>
+
+      <div class="qa-answer" id="qa-panel">
+        <h4 class="qa-answer__title" id="qa-title"></h4>
+        <div class="qa-answer__text" id="qa-text"></div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: ANTHROPIC WORKFLOW ==================== -->
+    <section class="section">
+      <p class="section-label" data-letter-stagger>Built With Claude</p>
+      <h2 data-reveal>The Anthropic workflow — from architecture to deployment.</h2>
+      <hr class="accent-rule" data-reveal>
+      <div class="prose" data-reveal>
+        <p>Every site I build uses Claude as a pair-programming partner. Not copy-paste from ChatGPT — a genuine collaborative workflow where the AI understands the full architecture and makes informed decisions alongside me.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card" data-reveal-left data-parallax="0.12">
+          <span class="workflow-card__step">01</span>
+          <h4 class="workflow-card__title">Architecture</h4>
+          <p class="workflow-card__text">Claude helps design the system before any code is written. We discuss trade-offs between SSR and SSG, debate database schemas, map out API routes. The AI sees the full picture — not just the file I'm editing. Every architectural decision is reasoned through, not guessed at.</p>
+        </div>
+
+        <div class="workflow-card" data-reveal-right data-parallax="0.18">
+          <span class="workflow-card__step">02</span>
+          <h4 class="workflow-card__title">Pair Programming</h4>
+          <p class="workflow-card__text">Real-time collaboration. I describe what I need, Claude writes the implementation. I review, adjust, push back. It's not about generating code — it's about having a second brain that remembers every dependency, every edge case, every decision we made three hours ago.</p>
+        </div>
+
+        <div class="workflow-card" data-reveal-left data-parallax="0.15">
+          <span class="workflow-card__step">03</span>
+          <h4 class="workflow-card__title">Chatbot Engineering</h4>
+          <p class="workflow-card__text">Training AI personas is its own discipline. System prompts are 2,000+ tokens of carefully structured personality, knowledge boundaries, anti-hallucination rules, and voice guidelines. Claude helps write prompts that make another AI behave correctly. It's AI training AI.</p>
+        </div>
+
+        <div class="workflow-card" data-reveal-right data-parallax="0.20">
+          <span class="workflow-card__step">04</span>
+          <h4 class="workflow-card__title">Deployment</h4>
+          <p class="workflow-card__text">From local development to global edge deployment. Claude handles Wrangler configs, R2 uploads, D1 migrations, DNS records, secret management. The entire infrastructure is code-defined and Claude understands every layer — from the Worker fetch handler to the Turnstile verification flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: CLOSING ==================== -->
+    <section class="section closing-section">
+      <div class="closing-wrap" id="closing-3d">
+        <p class="closing-text" data-reveal>
+          Every site is a template. Swap the logo. Change the palette. Feed it your facts. It becomes yours.
+        </p>
+        <p class="closing-footer" data-reveal>
+          Built by <strong>Marc</strong> · Powered by <strong>Claude</strong> · Deployed on <strong>Cloudflare</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="doc-footer">
+      <span class="doc-footer__brand">Marc Dinnerville</span>
+      <span>Marc &middot; <a href="mailto:allgoodnow@mailfence.com">allgoodnow@mailfence.com</a></span>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/nav.js"></script>
+
+  <script>
+  /* ============================================
+     COGNITO SHOWCASE — Page-Specific JS
+     ============================================ */
+  (function() {
+    'use strict';
+
+    // ── Q&A Interactive System ──────────────────
+    const qaData = {
+      chatbots: {
+        title: 'How the Chatbots Work',
+        text: 'Each chatbot persona is built on Cloudflare Workers AI running the Qwen 2.5 7B model — a powerful open-source language model that runs entirely at the edge. No API keys, no monthly fees, no third-party dependencies. Each persona has its own system prompt: a 2,000+ token document defining personality, knowledge boundaries, voice guidelines, and anti-hallucination rules. The chatbot knows only what it\'s been trained on — it can\'t make things up. Common questions are matched against an FAQ database first (zero AI cost), and only genuinely novel questions call the model. The result: instant, accurate, personality-consistent responses.'
+      },
+      custom: {
+        title: 'How Each Site is Customised',
+        text: 'Cognito is a client-theme architecture — one codebase, infinite variations. Each client site gets its own colour palette, typography, logo, business facts, and chatbot personas. The system prompt for each chatbot is written specifically for that business, trained on their real information. The visual design adapts through CSS custom properties and component variants. Swap the branding, feed it new facts, deploy to a fresh Cloudflare Pages project — and you have a completely new site that looks and behaves like it was built from scratch. The infrastructure (D1, Workers AI, Turnstile, Resend) is shared but isolated per project.'
+      },
+      model: {
+        title: 'The AI Model: Qwen 2.5 7B',
+        text: 'The site uses Qwen 2.5 7B through Cloudflare Workers AI — not OpenAI, not Anthropic\'s API. Qwen is an open-source model from Alibaba\'s research team, chosen for its strong instruction-following, multilingual capabilities, and efficient inference at the 7B parameter scale. Running on Workers AI means the model executes at Cloudflare\'s edge — close to the user, with no cold starts. The free tier allows 10,000 requests per day. For a small business site, that\'s essentially unlimited. The model is good enough for focused, domain-specific conversations where the system prompt constrains it to known facts.'
+      },
+      effects: {
+        title: 'The Special Effects',
+        text: 'Every visual effect serves the brand. The WebGL particle field (Three.js, 2,000 particles) creates depth and atmosphere. GSAP ScrollTrigger handles reveal animations — elements appear as you scroll, with staggered timing and parallax depth. CSS 3D transforms power the rotating cubes and tech prisms you see on this page. The rift plasma border uses CSS Houdini (@property) to animate a conic-gradient — something impossible with standard CSS. Lenis provides buttery smooth scrolling. The custom cursor with sparkle effects adds tactile feedback. None of this is decoration for decoration\'s sake — it\'s crafted to make technical content feel alive and engaging.'
+      }
+    };
+
+    const btns = document.querySelectorAll('.qa-btn');
+    const panel = document.getElementById('qa-panel');
+    const titleEl = document.getElementById('qa-title');
+    const textEl = document.getElementById('qa-text');
+    let activeBtn = null;
+
+    btns.forEach(function(btn) {
+      // Track mouse position for radial gradient
+      btn.addEventListener('mousemove', function(e) {
+        const rect = btn.getBoundingClientRect();
+        btn.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        btn.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+      });
+
+      btn.addEventListener('click', function() {
+        var key = btn.getAttribute('data-qa');
+        var data = qaData[key];
+        if (!data) return;
+
+        // Toggle active state
+        btns.forEach(function(b) { b.classList.remove('qa-btn--active'); });
+
+        if (activeBtn === btn) {
+          // Close panel
+          activeBtn = null;
+          panel.classList.remove('qa-answer--visible');
+          if (typeof gsap !== 'undefined') {
+            gsap.to(panel, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.in' });
+          }
+          return;
+        }
+
+        activeBtn = btn;
+        btn.classList.add('qa-btn--active');
+
+        // Set content
+        titleEl.textContent = data.title;
+        textEl.textContent = data.text;
+
+        // Show with spring animation
+        panel.classList.add('qa-answer--visible');
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(panel,
+            { height: 0, opacity: 0 },
+            { height: 'auto', opacity: 1, duration: 0.5, ease: 'back.out(1.4)' }
+          );
+        }
+      });
+    });
+
+    // ── Closing 3D Text Rotation ──────────────────
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      var closingWrap = document.getElementById('closing-3d');
+      if (closingWrap) {
+        gsap.fromTo(closingWrap,
+          { rotateY: 90, opacity: 0 },
+          {
+            rotateY: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: closingWrap,
+              start: 'top 80%',
+              end: 'top 40%',
+              scrub: 1
+            }
+          }
+        );
+      }
+    }
+
+  })();
+  </script>
+
+</body>
+</html>

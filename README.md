@@ -61,9 +61,9 @@ The Worker handles all routing, serves files from R2 with correct MIME types, ap
 
 These are full platforms I built and maintain — not templates:
 
-- **[daintreethaiboxing.com](https://daintreethaiboxing.com)** — Muay Thai gym with 3 AI chatbot personas, 6-panel admin dashboard, blog CMS, booking system. Astro 5 + Solid.js + Cloudflare D1 + Workers AI.
+- **[daintreethaiboxing.com](https://daintreethaiboxing.com)** — Muay Thai gym with 3 AI chatbot personas, 6-panel admin dashboard, blog CMS, booking system. Astro 6 + Solid.js + Cloudflare D1 + Workers AI.
 
-- **[stixandpebbles.pages.dev](https://stixandpebbles.pages.dev)** — Handmade crafts e-commerce with AI shopping assistant, Stripe checkout, product catalogue, order management. Astro 5 + Solid.js + Cloudflare D1 + Stripe.
+- **[stixandpebbles.pages.dev](https://stixandpebbles.pages.dev)** — Handmade crafts e-commerce with AI shopping assistant, Stripe checkout, product catalogue, order management. Astro 6 + Solid.js + Cloudflare D1 + Stripe.
 
 ## Author
 

@@ -198,8 +198,7 @@
     if (typeof Lenis === 'undefined') return;
 
     lenisInstance = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
       touchMultiplier: 1.5,
       infinite: false
     });
@@ -221,6 +220,20 @@
       }
       requestAnimationFrame(raf);
     }
+
+    // Allow middle-mouse auto-scroll by pausing Lenis during auto-scroll
+    document.addEventListener('mousedown', (e) => {
+      if (e.button === 1 && lenisInstance) {
+        lenisInstance.stop();
+        const resume = () => {
+          if (lenisInstance) lenisInstance.start();
+          document.removeEventListener('click', resume);
+          document.removeEventListener('mousedown', resume);
+        };
+        document.addEventListener('click', resume, { once: true });
+        document.addEventListener('mousedown', resume, { once: true });
+      }
+    });
   }
 
   // ══════════════════════════════════════════
@@ -1017,6 +1030,184 @@
   }
 
   // ══════════════════════════════════════════
+  //  10. NEURAL NETWORK CANVAS
+  // ══════════════════════════════════════════
+
+  function initNeuralNet() {
+    const canvas = document.getElementById('neural-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const card = document.getElementById('neural-card');
+    let width, height;
+    const NODE_COUNT = isTouchDevice ? 30 : 60;
+    const CONNECTION_DIST = 120;
+    const nodes = [];
+    let activated = false;
+    let activationProgress = 0;
+
+    function resize() {
+      const rect = card.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * Math.min(window.devicePixelRatio, 2);
+      canvas.height = height * Math.min(window.devicePixelRatio, 2);
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.scale(Math.min(window.devicePixelRatio, 2), Math.min(window.devicePixelRatio, 2));
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Create nodes
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: 1.5 + Math.random() * 2,
+        pulse: Math.random() * Math.PI * 2,
+        brightness: 0.3 + Math.random() * 0.4
+      });
+    }
+
+    // Activate on scroll (via IntersectionObserver)
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !activated) {
+        activated = true;
+      }
+    }, { threshold: 0.3 });
+    observer.observe(card);
+
+    // Mouse tracking relative to card
+    let cardMouseX = width / 2;
+    let cardMouseY = height / 2;
+    let mouseInCard = false;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      cardMouseX = e.clientX - rect.left;
+      cardMouseY = e.clientY - rect.top;
+      mouseInCard = true;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      mouseInCard = false;
+    });
+
+    function animate() {
+      if (!isTabVisible) {
+        requestAnimationFrame(animate);
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Activation ease-in
+      if (activated && activationProgress < 1) {
+        activationProgress = Math.min(1, activationProgress + 0.008);
+      }
+
+      const activeAlpha = activationProgress;
+
+      // Update nodes
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        n.pulse += 0.02;
+
+        // Bounce off edges
+        if (n.x < 0 || n.x > width) n.vx *= -1;
+        if (n.y < 0 || n.y > height) n.vy *= -1;
+        n.x = Math.max(0, Math.min(width, n.x));
+        n.y = Math.max(0, Math.min(height, n.y));
+
+        // Subtle mouse attraction
+        if (mouseInCard) {
+          const dx = cardMouseX - n.x;
+          const dy = cardMouseY - n.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200 && dist > 1) {
+            n.vx += (dx / dist) * 0.015;
+            n.vy += (dy / dist) * 0.015;
+          }
+        }
+
+        // Dampen velocity
+        n.vx *= 0.998;
+        n.vy *= 0.998;
+      }
+
+      // Draw connections
+      for (let i = 0; i < NODE_COUNT; i++) {
+        for (let j = i + 1; j < NODE_COUNT; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < CONNECTION_DIST) {
+            const alpha = (1 - dist / CONNECTION_DIST) * 0.25 * activeAlpha;
+
+            // Pulse along connection
+            const pulsePhase = (a.pulse + b.pulse) * 0.5;
+            const pulseAlpha = 0.5 + Math.sin(pulsePhase) * 0.5;
+
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(200, 149, 42, ${alpha * pulseAlpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      for (let i = 0; i < NODE_COUNT; i++) {
+        const n = nodes[i];
+        const glow = 0.5 + Math.sin(n.pulse) * 0.3;
+        const alpha = n.brightness * glow * activeAlpha;
+
+        // Mouse proximity glow
+        let proximityBoost = 0;
+        if (mouseInCard) {
+          const dx = cardMouseX - n.x;
+          const dy = cardMouseY - n.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            proximityBoost = (1 - dist / 150) * 0.6;
+          }
+        }
+
+        // Outer glow
+        const glowRadius = n.radius * (3 + proximityBoost * 4);
+        const gradient = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, glowRadius);
+        gradient.addColorStop(0, `rgba(200, 149, 42, ${(alpha + proximityBoost) * 0.4})`);
+        gradient.addColorStop(1, 'rgba(200, 149, 42, 0)');
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, glowRadius, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        // Core
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.radius * (1 + proximityBoost * 0.5), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(224, 176, 68, ${alpha + proximityBoost})`;
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  // ══════════════════════════════════════════
   //  INIT ALL
   // ══════════════════════════════════════════
 
@@ -1040,6 +1231,7 @@
       initLetterStagger();
       initHeroAnimation(0.1);
       initSmoothScroll();
+      initNeuralNet();
     });
   }
 
